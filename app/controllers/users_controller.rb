@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
     wrap_parameters format: []
     rescue_from ActiveRecord::RecordInvalid,with: :render_unprocessable_entity
-    skip_before_action :authorized_user, only: :create
+    before_action :authorize
+    skip_before_action :authorize, only: [:create]
 
     
     def create
         user = User.create(user_params)
         session[:user_id] = user.id
-
         render json: user , status: :created
 
     end 
@@ -34,4 +34,8 @@ class UsersController < ApplicationController
     def render_unprocessable_entity(invalid)
         render json: {error: invalid.record.errors}, status: :unprocessable_entity
     end 
+
+    def authorize
+        return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
+    end
 end

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-
-    skip_before_action :authorized_user, only: :create
+    before_action :authorize
+    skip_before_action :authorize, only: [:create]
 
     def create
         
@@ -13,6 +13,24 @@ class SessionsController < ApplicationController
             render json: {error: "Invalid username or Password"}, status: :unauthorized
         end 
     end 
+
+    def destroy
+        session.delete :user_id
+        head :no_content
+    end 
+
+
+
+
+
+
+
+    private
+
+
+    def authorize
+        return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
+    end
 
 
 

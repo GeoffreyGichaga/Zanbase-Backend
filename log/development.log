@@ -293,3 +293,338 @@ Processing by UsersController#create as */*
 Completed 201 Created in 1045ms (Views: 17.3ms | ActiveRecord: 179.0ms | Allocations: 15617)
 
 
+Started GET "/main.884ac98de34affa9b5b5.hot-update.json" for ::1 at 2022-08-23 03:00:33 +0300
+  [1m[35m (32.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/main.884ac98de34affa9b5b5.hot-update.json"):
+  
+Started GET "/dashboard" for ::1 at 2022-08-23 03:00:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard"):
+  
+Started GET "/favicon.ico" for ::1 at 2022-08-23 03:00:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-08-23 03:02:51 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ZanaAfrica/.rvm/gems/ruby-2.7.4/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ZanaAfrica/.rvm/gems/ruby-2.7.4/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 20.7ms | Allocations: 185)
+Completed 200 OK in 31ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 840)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:06:32 +0300
+  
+ArgumentError (Before process_action callback :authorized_user has not been defined):
+  
+app/controllers/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:06:33 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:06:33 +0300
+Processing by TutorialsController#index as */*
+Processing by TargetsController#index as */*
+Completed 404 Not Found in 2833ms (ActiveRecord: 1516.6ms | Allocations: 10569)
+
+
+Completed 404 Not Found in 2823ms (ActiveRecord: 1517.4ms | Allocations: 9970)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:06:36 +0300
+Processing by TutorialsController#index as */*
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 189)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:06:36 +0300
+Processing by TargetsController#index as */*
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+  [1m[36mUser Load (48.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:09:37 +0300
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Before process_action callback :authorized_user has not been defined):
+  
+app/controllers/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:09:38 +0300
+Processing by TargetsController#index as */*
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:09:38 +0300
+Processing by TutorialsController#index as */*
+Completed 404 Not Found in 1072ms (ActiveRecord: 997.8ms | Allocations: 7523)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:09:39 +0300
+Processing by TargetsController#index as */*
+Completed 404 Not Found in 11ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+Completed 404 Not Found in 1123ms (ActiveRecord: 129.7ms | Allocations: 30671)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:09:40 +0300
+Processing by TutorialsController#index as */*
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:10:04 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:10:04 +0300
+Processing by TargetsController#index as */*
+Completed 404 Not Found in 16ms (ActiveRecord: 0.0ms | Allocations: 190)
+
+
+Processing by TutorialsController#index as */*
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 190)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:10:04 +0300
+Processing by TargetsController#index as */*
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms | Allocations: 190)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:10:04 +0300
+Processing by TutorialsController#index as */*
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:10:38 +0300
+  
+ArgumentError (Before process_action callback :authorized_user has not been defined):
+  
+app/controllers/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:11:03 +0300
+  
+ArgumentError (Before process_action callback :authorized_user has not been defined):
+  
+app/controllers/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:13:50 +0300
+  [1m[35m (33.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Before process_action callback :authorized_user has not been defined):
+  
+app/controllers/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:13:50 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:13:50 +0300
+Processing by TutorialsController#index as */*
+Processing by TargetsController#index as */*
+Completed 404 Not Found in 97ms (ActiveRecord: 10.4ms | Allocations: 6658)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:13:51 +0300
+Processing by TutorialsController#index as */*
+Completed 404 Not Found in 7ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Completed 404 Not Found in 388ms (ActiveRecord: 282.5ms | Allocations: 35656)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:13:51 +0300
+Processing by TargetsController#index as */*
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/targets_controller.rb:4:in `index'
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:23:28 +0300
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"firstname"=>"Aly", "lastname"=>"Gee", "email"=>"ag@gmail.com", "username"=>"Agtests", "role"=>"manager", "supervisor"=>"Angie", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (41.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (86.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ag@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Agtests"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (105.4ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "username", "role", "supervisor", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", "Aly"], ["lastname", "Gee"], ["email", "ag@gmail.com"], ["username", "Agtests"], ["role", "manager"], ["supervisor", "Angie"], ["password_digest", "$2a$12$NFUqaaoVTFJ1RA8V6c8sNegnP/lGNnRDD6u7hJeVfBaraDWoFhjBa"], ["created_at", "2022-08-23 00:23:30.555434"], ["updated_at", "2022-08-23 00:23:30.555434"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (82.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 201 Created in 874ms (Views: 26.1ms | ActiveRecord: 391.4ms | Allocations: 15617)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:23:31 +0300
+Processing by TargetsController#index as */*
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:23:31 +0300
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 752)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:23:31 +0300
+Processing by TargetsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Processing by TutorialsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 251)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:23:31 +0300
+Processing by TutorialsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:27:03 +0300
+  [1m[35m (42.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"firstname"=>"Alii", "lastname"=>"testing", "email"=>"Aliii@gmail.com", "username"=>"Altesting", "role"=>"manager", "supervisor"=>"Florence", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Aliii@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Altesting"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (43.8ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "username", "role", "supervisor", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", "Alii"], ["lastname", "testing"], ["email", "Aliii@gmail.com"], ["username", "Altesting"], ["role", "manager"], ["supervisor", "Florence"], ["password_digest", "$2a$12$3Mui0L3mh2qLz7iIl85RdeBpcSJU.W8.cnY2.9Z3e07m7Rq1Nf3Li"], ["created_at", "2022-08-23 00:27:04.844321"], ["updated_at", "2022-08-23 00:27:04.844321"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 201 Created in 804ms (Views: 23.3ms | ActiveRecord: 65.8ms | Allocations: 15620)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:27:05 +0300
+Processing by TutorialsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 562)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:27:05 +0300
+Processing by TargetsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 251)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:27:05 +0300
+Processing by TutorialsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:27:05 +0300
+Processing by TargetsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorized_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-23 03:35:07 +0300
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"firstname"=>"Jay", "lastname"=>"Ty", "email"=>"jayt@gmail.com", "username"=>"JayT", "role"=>"manager", "supervisor"=>"Oliver", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (68.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jayt@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (10.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "JayT"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (176.2ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "username", "role", "supervisor", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", "Jay"], ["lastname", "Ty"], ["email", "jayt@gmail.com"], ["username", "JayT"], ["role", "manager"], ["supervisor", "Oliver"], ["password_digest", "$2a$12$UpKp1EsAyOTiVsOJ4ivay.GggTX3eYRoWtdKQtxFkegHZChjzvBx6"], ["created_at", "2022-08-23 00:35:08.361601"], ["updated_at", "2022-08-23 00:35:08.361601"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.88ms)
+Completed 201 Created in 735ms (Views: 24.3ms | ActiveRecord: 305.6ms | Allocations: 15617)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:35:09 +0300
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:35:09 +0300
+Processing by TargetsController#index as */*
+Processing by TutorialsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 1158)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 566)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-08-23 03:35:09 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-08-23 03:35:09 +0300
+Processing by TargetsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Processing by TutorialsController#index as */*
+Filter chain halted as :authorize rendered or redirected
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 8ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 588)
+
+
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 482)
+
+
