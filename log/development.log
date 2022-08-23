@@ -628,3 +628,18 @@ Filter chain halted as :authorize rendered or redirected
 Completed 401 Unauthorized in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 482)
 
 
+  [1m[35m (245.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (529.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSupervisors (20220823014535)
+  [1m[36mTRANSACTION (82.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11123.6ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" bigserial primary key, "name" character varying, "role" character varying, "department" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (722.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220823014535"]]
+  [1m[36mTRANSACTION (204.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDepartments (20220823014912)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (530.6ms)[0m  [1m[35mCREATE TABLE "departments" ("id" bigserial primary key, "name" character varying, "organisation" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220823014912"]]
+  [1m[36mTRANSACTION (82.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (163.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

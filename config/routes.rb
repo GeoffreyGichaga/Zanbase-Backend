@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :departments
+  resources :supervisors
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :user_details, only: [:create,:update]
   resources :attendances
