@@ -1,8 +1,10 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :summary
+  attributes :id, :firstname, :lastname,:username, :role,:supervisor,:password_digest,:user_detail,:attendance
 
-  def summary
-    "#{self.object.firstname} #{self.object.lastname}"
-  end
+
+  # def summary
+  #   "#{self.object.firstname} #{self.object.lastname}"
+  # end
   
 end
+

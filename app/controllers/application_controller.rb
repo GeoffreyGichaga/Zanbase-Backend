@@ -1,12 +1,19 @@
 class ApplicationController < ActionController::API
-    include ActionController::Cookies
-
-    # before_action :authorized_user
+  before_action :authorize
 
 
-    # def authorized_user
-    #     return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
-    # end
+  def authorize
+    header = request.headers['Authorization']
+    header = header.split(' ').last if header
+    begin
+      @decoded = JsonWebToken.decode(header)
+      @current_user = User.find(@decoded[:user_id])
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { errors: e.message }, status: :unauthorized
+    rescue JWT::DecodeError => e
+      render json: { errors: e.message }, status: :unauthorized
+    end
+  end
 
     
 end

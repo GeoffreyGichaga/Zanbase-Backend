@@ -1,18 +1,29 @@
 class SessionsController < ApplicationController
-    before_action :authorize
-    skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: :create
 
     def create
-        
-        user = User.find_by(username: params[:username])
+        @user = User.find_by(email: params[:email])
+        if @user&.authenticate(params[:password])
+            token = JsonWebToken.encode(user_id: @user.id)
+            time = Time.now + 24.hours.to_i
 
-        if user&.authenticate(params[:password])
-            session[:user_id] = user.id
-            render json: user, status: :created
+            render json: { jwt: token, exp: time.strftime('%m-%d-%Y %H:%M'),firstname: @user.firstname,lastname: @user.lastname,
+             email: @user.email, role: @user.role }, status: :ok
         else
-            render json: {error: "Invalid username or Password"}, status: :unauthorized
-        end 
-    end 
+            render json: { error: 'unauthorized' }, status: :unauthorized
+          
+        end
+    end  
+
+    
+ 
+
+    def show
+        
+        render json: @current_user, status: :ok
+    end
+
+    
 
     def destroy
         session.delete :user_id
@@ -23,14 +34,6 @@ class SessionsController < ApplicationController
 
 
 
-
-
-    private
-
-
-    def authorize
-        return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
-    end
 
 
 

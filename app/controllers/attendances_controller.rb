@@ -1,9 +1,8 @@
 class AttendancesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid,with: :render_unprocessable_entity
-    before_action :authorize
 
     def index
-        user = User.find(session[:user_id])
+        @user = User.find_by(email: params[:email])
         if(user)
             attendances = Attendance.all
             render json: attendances, status: :ok
@@ -14,8 +13,9 @@ class AttendancesController < ApplicationController
     end
 
     def create
-        attendance = Attendance.create!(attendance_params)
-        render json: attendance, status: :created
+        attendancez = Attendance.create(attendance_params)
+        # ActionCable.server.broadcast("attendances", attendance)
+        render json: attendancez, status: :created
     end  
 
    
@@ -37,9 +37,5 @@ class AttendancesController < ApplicationController
         render json: {error: "Please Login first"}, status: :unauthorized
     end
 
-
-    def authorize
-        return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
-    end
 
 end

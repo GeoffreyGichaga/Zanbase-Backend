@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-  resources :departments
-  resources :supervisors
+  resources :departments, only: [:create,:update]
+  resources :supervisors, only: [:create,:update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :user_details, only: [:create,:update]
-  resources :attendances
+  resources :user_details, only: [:create,:update,:show]
+  resources :attendances, only: [:create,:index]
   resources :targets, only: [:create,:index]
   resources :users, only: [:create,:show]
   resources :tutorials
 
   post "/login", to: "sessions#create"
 
-  get "/auth", to: "users#show"
+  get "/me", to: "users#show"
+
 
   delete "/logout", to: "sessions#destroy"
+
+  # mount ActionCable.server => '/cable'
+
 end

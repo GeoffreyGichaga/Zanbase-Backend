@@ -3,7 +3,7 @@ class Attendance < ApplicationRecord
 
     validates :date, presence: true
     validates :timeIn, presence: true
-    validates :timeOut, presnece: true
+    validates :timeOut, presence: true
     validates :activities, presence: true
     validates :sign, presence: true
     validates :checkedBy, presence: true    

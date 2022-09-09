@@ -1,5 +1,4 @@
 class TutorialsController < ApplicationController
-    before_action :authorize
 
     def index
         user = User.find(session[:user_id])
@@ -52,9 +51,7 @@ class TutorialsController < ApplicationController
         render json: {error: "Please Login first"}, status: :unauthorized
     end
 
-    def authorize
-        return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
-    end
+    
 
 
 
