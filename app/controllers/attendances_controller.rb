@@ -3,7 +3,7 @@ class AttendancesController < ApplicationController
 
     def index
         @user = User.find_by(email: params[:email])
-        if(user)
+        if(@user)
             attendances = Attendance.all
             render json: attendances, status: :ok
         else
@@ -13,9 +13,10 @@ class AttendancesController < ApplicationController
     end
 
     def create
-        attendancez = Attendance.create(attendance_params)
+        attendancez = @user.attendance.create(attendance_params)
         # ActionCable.server.broadcast("attendances", attendance)
         render json: attendancez, status: :created
+        
     end  
 
    

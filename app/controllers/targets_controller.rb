@@ -1,14 +1,9 @@
 class TargetsController < ApplicationController
 
     def index
-        user = User.find(session[:user_id])
-        if(user)
-            targets = Target.all
-            render json: targets, status: :ok
-        else
-            render_unaothorized_response
-        end 
-
+        targets = Target.all
+        render json: targets, status: :ok
+         
     end
 
     def create 
@@ -19,15 +14,9 @@ class TargetsController < ApplicationController
     
 
 
-
     private
     def target_params
         params.permit(:title,:description)
     end
-
-    def render_unaothorized_response
-        render json: {error: "Please Login first"}, status: :unauthorized
-    end 
-
 
 end

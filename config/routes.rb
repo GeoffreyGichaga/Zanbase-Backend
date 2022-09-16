@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :supervisors, only: [:create,:update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :user_details, only: [:create,:update,:show]
-  resources :attendances, only: [:create,:index]
+  resources :attendances
   resources :targets, only: [:create,:index]
   resources :users, only: [:create,:show]
   resources :tutorials

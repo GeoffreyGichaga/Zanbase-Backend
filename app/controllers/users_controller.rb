@@ -7,15 +7,10 @@ class UsersController < ApplicationController
         render json: user , status: :created
     end 
 
-    # def show
-    #     current_logged_user = User.find(session[:user_id])
-    #     render json: current_logged_user, status: :ok
-    # end 
-
-    def show
-        current_user = User.find(session[:user_id])
-        render json: current_user
-    end 
+   # show route
+  def show
+    render json: @current_user, status: :ok
+  end
 
      
 
