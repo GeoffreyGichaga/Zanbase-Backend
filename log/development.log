@@ -8223,3 +8223,427 @@ Migrating to CreateTasks (20220916015701)
   [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/me" for 127.0.0.1 at 2022-09-16 05:01:52 +0300
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (4.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (264.87ms)
+Completed 200 OK in 847ms (Views: 310.2ms | ActiveRecord: 47.8ms | Allocations: 21328)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-16 05:01:54 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (82.29ms)
+Completed 200 OK in 105ms (Views: 81.5ms | ActiveRecord: 4.9ms | Allocations: 2392)
+
+
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:03:04 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M Bank", "account_number"=>"00000001", "bank_code"=>"1234", "branch_code"=>"Kilimani", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M Bank", "account_number"=>"00000001", "bank_code"=>"1234", "branch_code"=>"Kilimani", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (20.3ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M Bank"], ["account_number", "00000001"], ["bank_code", "1234"], ["branch_code", "Kilimani"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:03:05.745052"], ["updated_at", "2022-09-16 02:03:05.745052"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (13.22ms)
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 66.5ms | Allocations: 9141)
+
+
+  
+NoMethodError (undefined method `render' for #<UserDetailSerializer:0x00007fbc76a40e90>):
+  
+app/serializers/user_detail_serializer.rb:6:in `info_response'
+app/controllers/user_details_controller.rb:4:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:04:35 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"000000001", "bank_code"=>"1234", "branch_code"=>"123456", "telephone_number"=>"07123456789", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"000000001", "bank_code"=>"1234", "branch_code"=>"123456", "telephone_number"=>"07123456789", "user_id"=>5}}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 774ms (ActiveRecord: 210.6ms | Allocations: 14820)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Telephone number is too long (maximum is 10 characters)):
+  
+app/controllers/user_details_controller.rb:3:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:06:14 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M", "account_number"=>"098765436245", "bank_code"=>"388E56", "branch_code"=>"RYGU", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M", "account_number"=>"098765436245", "bank_code"=>"388E56", "branch_code"=>"RYGU", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (13.0ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M"], ["account_number", "098765436245"], ["bank_code", "388E56"], ["branch_code", "RYGU"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:06:14.427224"], ["updated_at", "2022-09-16 02:06:14.427224"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 421ms (ActiveRecord: 31.8ms | Allocations: 5080)
+
+
+  
+NameError (undefined local variable or method `user_details' for #<UserDetailsController:0x00000000006810>
+Did you mean?  @user_details):
+  
+app/controllers/user_details_controller.rb:4:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:07:09 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M Bank", "account_number"=>"098r458963789045", "bank_code"=>"98437tdf", "branch_code"=>"jdgf743", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M Bank", "account_number"=>"098r458963789045", "bank_code"=>"98437tdf", "branch_code"=>"jdgf743", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (2.1ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M Bank"], ["account_number", "098r458963789045"], ["bank_code", "98437tdf"], ["branch_code", "jdgf743"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:07:10.998080"], ["updated_at", "2022-09-16 02:07:10.998080"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (33.69ms)
+Completed 500 Internal Server Error in 676ms (ActiveRecord: 112.0ms | Allocations: 15068)
+
+
+  
+NoMethodError (undefined method `render' for #<UserDetailSerializer:0x00007fbc773d3520>):
+  
+app/serializers/user_detail_serializer.rb:6:in `info_response'
+app/controllers/user_details_controller.rb:4:in `create'
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserDetailIdToUser (20220916021427)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220916021427"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserDetailIdToUser (20220916021427)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.6ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "user_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (9.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220916021427"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserDetailIdToUser (20220916021427)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mALTER TABLE "users" ADD "user_detail_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220916021427"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserDetailIdToUser (20220916021427)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "user_detail_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220916021427"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserDetailIdToUser (20220916021427)
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.2ms)[0m  [1m[35mALTER TABLE "users" ADD "user_details_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220916021427"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserDetail Load (3.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUserDetail Load (5.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (4.1ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (1.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (4.0ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (1.8ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (2.2ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (1.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-09-16 05:24:35 +0300
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (2.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (291.35ms)
+Completed 200 OK in 814ms (Views: 398.9ms | ActiveRecord: 28.9ms | Allocations: 21718)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-16 05:24:37 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (6.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (92.38ms)
+Completed 200 OK in 115ms (Views: 86.4ms | ActiveRecord: 9.0ms | Allocations: 2394)
+
+
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:25:19 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (254.9ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M bank"], ["account_number", "234586y4hbfds"], ["bank_code", "985uiwe"], ["branch_code", "wfdjf74"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:25:21.154340"], ["updated_at", "2022-09-16 02:25:21.154340"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (25.11ms)
+Completed 500 Internal Server Error in 861ms (ActiveRecord: 313.5ms | Allocations: 9112)
+
+
+  
+NoMethodError (undefined method `render' for #<UserDetailSerializer:0x00007fcd13d3bcf0>):
+  
+app/serializers/user_detail_serializer.rb:6:in `info_response'
+app/controllers/user_details_controller.rb:4:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:27:52 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (8.9ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M bank"], ["account_number", "234586y4hbfds"], ["bank_code", "985uiwe"], ["branch_code", "wfdjf74"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:27:53.152630"], ["updated_at", "2022-09-16 02:27:53.152630"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (2.66ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 66.3ms | Allocations: 15494)
+
+
+  
+NoMethodError (undefined method `render' for #<UserDetailSerializer:0x00007fcd14ebeab8>):
+  
+app/serializers/user_detail_serializer.rb:6:in `info_response'
+app/controllers/user_details_controller.rb:4:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:28:17 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (0.9ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M bank"], ["account_number", "234586y4hbfds"], ["bank_code", "985uiwe"], ["branch_code", "wfdjf74"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:28:17.298737"], ["updated_at", "2022-09-16 02:28:17.298737"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 201 Created in 71ms (Views: 5.2ms | ActiveRecord: 13.7ms | Allocations: 14367)
+
+
+  [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUserDetail Load (2.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (4.3ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (1.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (1.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (1.8ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (1.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUserDetail Load (1.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 5], ["LIMIT", 11]]
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:33:38 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Jeff G"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "234586y4hbfds"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (11.8ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "0712345678"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (14.4ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M bank"], ["account_number", "234586y4hbfds"], ["bank_code", "985uiwe"], ["branch_code", "wfdjf74"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:33:38.810740"], ["updated_at", "2022-09-16 02:33:38.810740"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (9.95ms)
+Completed 500 Internal Server Error in 284ms (ActiveRecord: 53.8ms | Allocations: 24642)
+
+
+  
+NoMethodError (undefined method `render' for #<UserDetailSerializer:0x00007f987ca35888>):
+  
+app/serializers/user_detail_serializer.rb:6:in `response'
+app/controllers/user_details_controller.rb:4:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:43:21 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Jeff G"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "234586y4hbfds"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "0712345678"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 97ms (ActiveRecord: 72.7ms | Allocations: 17854)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Name on account has already been taken, Account number has already been taken, Telephone number has already been taken):
+  
+app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Load (1.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (11.4ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:44:21 +0300
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Jeff G"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "234586y4hbfds"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (7.3ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "0712345678"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (31.6ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M bank"], ["account_number", "234586y4hbfds"], ["bank_code", "985uiwe"], ["branch_code", "wfdjf74"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:44:22.183144"], ["updated_at", "2022-09-16 02:44:22.183144"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (16.67ms)
+Completed 500 Internal Server Error in 502ms (ActiveRecord: 86.0ms | Allocations: 26039)
+
+
+  
+NoMethodError (undefined method `render' for #<UserDetailSerializer:0x00007fa3eb9c50e0>):
+  
+app/serializers/user_detail_serializer.rb:7:in `response'
+app/controllers/user_details_controller.rb:4:in `create'
+  [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserDetail Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_details" WHERE "user_details"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/user_details" for 127.0.0.1 at 2022-09-16 05:45:09 +0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>5, "name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_detail"=>{"name_on_account"=>"Jeff G", "bank_name"=>"I&M bank", "account_number"=>"234586y4hbfds", "bank_code"=>"985uiwe", "branch_code"=>"wfdjf74", "telephone_number"=>"0712345678", "user_id"=>5}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Jeff G"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "234586y4hbfds"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "0712345678"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (2.1ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_on_account", "Jeff G"], ["bank_name", "I&M bank"], ["account_number", "234586y4hbfds"], ["bank_code", "985uiwe"], ["branch_code", "wfdjf74"], ["telephone_number", "0712345678"], ["user_id", 5], ["created_at", "2022-09-16 02:45:09.788343"], ["updated_at", "2022-09-16 02:45:09.788343"]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/user_details_controller.rb:4:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (40.99ms)
+Completed 201 Created in 233ms (Views: 68.7ms | ActiveRecord: 23.9ms | Allocations: 28974)
+
+

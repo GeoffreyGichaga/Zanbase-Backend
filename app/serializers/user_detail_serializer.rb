@@ -1,8 +1,9 @@
 class UserDetailSerializer < ActiveModel::Serializer
-  attributes :info_response
+  attributes :id
+  belongs_to :user
 
 
-  def info_response
+  def response
     render json: {message: "You have Successfuly added your profile info"}, status: :created
   end 
 end
