@@ -1,5 +1,6 @@
 class Supervisor < ApplicationRecord
-    # has_many :users
+    has_many :users
+    has_many :tasks
     # belongs_to :department
 
 
