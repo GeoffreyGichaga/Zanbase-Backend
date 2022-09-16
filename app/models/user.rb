@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :attendance
     belongs_to :supervisor
     belongs_to :department
+    has_many :tasks
     
     validates :firstname, presence: true
     validates :lastname, presence: true
