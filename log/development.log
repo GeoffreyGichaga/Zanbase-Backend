@@ -8106,3 +8106,110 @@ Processing by UsersController#show as */*
 Completed 200 OK in 324ms (Views: 299.7ms | ActiveRecord: 5.6ms | Allocations: 2391)
 
 
+Started GET "/me" for 127.0.0.1 at 2022-09-16 04:15:00 +0300
+Started GET "/tutorials" for 127.0.0.1 at 2022-09-16 04:15:00 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-09-16 04:15:00 +0300
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TargetsController#index as */*
+Processing by UsersController#show as */*
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (17.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUser Load (133.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 265ms (ActiveRecord: 182.8ms | Allocations: 8505)
+
+
+  [1m[36mTarget Load (32.9ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.35ms)
+Completed 200 OK in 786ms (Views: 290.0ms | ActiveRecord: 105.2ms | Allocations: 33962)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-09-16 04:15:02 +0300
+Processing by TargetsController#index as */*
+Started GET "/tutorials" for 127.0.0.1 at 2022-09-16 04:15:02 +0300
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (6.0ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+Completed 404 Not Found in 19ms (ActiveRecord: 2.9ms | Allocations: 1681)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 40ms (Views: 15.5ms | ActiveRecord: 10.7ms | Allocations: 3508)
+
+
+[active_model_serializers]   [1m[36mUserDetail Load (1.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (183.35ms)
+Completed 200 OK in 978ms (Views: 589.4ms | ActiveRecord: 93.3ms | Allocations: 56723)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-16 04:15:02 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (1.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.8ms)
+Completed 200 OK in 53ms (Views: 33.7ms | ActiveRecord: 5.4ms | Allocations: 2405)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-16 04:24:34 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.9ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (30.98ms)
+Completed 200 OK in 235ms (Views: 42.1ms | ActiveRecord: 58.8ms | Allocations: 6314)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-16 04:24:34 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (36.17ms)
+Completed 200 OK in 76ms (Views: 35.7ms | ActiveRecord: 2.8ms | Allocations: 2391)
+
+
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToUserDetails (20220916013032)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.7ms)[0m  [1m[35mALTER TABLE "user_details" ADD "user_id" integer[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToTask (20220916013231)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "tasks" ADD "user_id" integer[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
