@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   before_action :authorize
 
-
+    
   def authorize
     header = request.headers['Authorization']
     header = header.split(' ').last if header
@@ -17,3 +17,4 @@ class ApplicationController < ActionController::API
 
     
 end
+  

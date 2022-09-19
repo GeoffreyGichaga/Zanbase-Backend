@@ -1,23 +1,17 @@
 class AttendancesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid,with: :render_unprocessable_entity
 
-    def index
-        @user = User.find_by(email: params[:email])
-        if(@user)
-            attendances = Attendance.all
-            render json: attendances, status: :ok
-        else
-            render_unaothorized_response
-        end 
-            
-    end
+    # def index
+    #     attendances = @current_user.attendance
+    #     render json: attendances, status: :ok         
+    # end
 
     def create
-        attendancez = @user.attendance.create(attendance_params)
-        # ActionCable.server.broadcast("attendances", attendance)
-        render json: attendancez, status: :created
+        new_attendances = Attendance.create!(attendance_params)
+        ActionCable.server.broadcast("attendances", new_attendances)
+        render json: new_attendances, status: :created
         
-    end  
+    end   
 
    
 
@@ -27,7 +21,7 @@ class AttendancesController < ApplicationController
 
     private
     def attendance_params
-        params.permit(:date,:timeIn,:timeOut,:activities,:sign,:checkedBy)
+        params.permit(:user_id,:date,:timeIn,:timeOut,:activities,:sign,:checkedBy)
     end
 
     def render_unprocessable_data(invalid)

@@ -7,10 +7,11 @@ class UsersController < ApplicationController
         render json: user , status: :created
     end 
 
+
    # show route
-  def show
-    render json: @current_user, status: :ok
-  end
+    def show
+        render json: @current_user, status: :ok
+    end
 
      
 
