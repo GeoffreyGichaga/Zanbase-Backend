@@ -1,17 +1,24 @@
 class AttendancesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid,with: :render_unprocessable_entity
 
-    # def index
-    #     attendances = @current_user.attendance
-    #     render json: attendances, status: :ok         
-    # end
+    def index
+        attendances = @current_user.attendance
+        render json: attendances, status: :ok         
+    end
 
     def create
         new_attendances = Attendance.create!(attendance_params)
         ActionCable.server.broadcast("attendances", new_attendances)
         render json: new_attendances, status: :created
         
-    end   
+    end  
+     
+    def show
+        attendances = Attendance.where(user_id:  @current_user)
+        render json: attendances, status: :ok
+    end
+
+   
 
    
 

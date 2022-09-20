@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/me", to: "sessions#show"
 
 
+
   delete "/logout", to: "sessions#destroy"
 
   mount ActionCable.server => '/cable'
