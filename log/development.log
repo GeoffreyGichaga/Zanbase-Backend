@@ -28102,3 +28102,66 @@ Migrating to AddPvIdToUser (20220921002527)
   [1m[36mActiveRecord::InternalMetadata Load (39.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAttendance Load (6.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (60.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances"[0m
+  [1m[36mAttendance Load (5.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" ORDER BY "attendances"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (41.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (41.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAttendance Load (3.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances"[0m
+  [1m[36mAttendance Load (2.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mTRANSACTION (51.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (51.8ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (43.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (1.6ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (48.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (0.7ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (1.1ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (0.6ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (41.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (1.0ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (1.5ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (2.7ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (2.1ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 9]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (0.6ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 10]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Destroy (41.6ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = $1[0m  [["id", 11]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAttendance Create (53.3ms)[0m  [1m[32mINSERT INTO "attendances" ("date", "timeIn", "timeOut", "activities", "sign", "checkedBy", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["date", "21/09/2002"], ["timeIn", "0800"], ["timeOut", "1700"], ["activities", "coding"], ["sign", "G.G"], ["checkedBy", "JN"], ["created_at", "2022-09-21 01:24:23.184180"], ["updated_at", "2022-09-21 01:24:23.184180"], ["user_id", 10]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendance Load (1.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" ORDER BY "attendances"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUserDetail Exists? (47.5ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "JEFF jeff"], ["LIMIT", 1]]
+  [1m[36mUserDetail Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "14567276"], ["LIMIT", 1]]
+  [1m[36mUserDetail Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "075634738735"], ["LIMIT", 1]]
+  [1m[36mUserDetail Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."id_number" = $1 LIMIT $2[0m  [["id_number", 87645362], ["LIMIT", 1]]
+  [1m[36mUserDetail Create (1.0ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at", "id_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name_on_account", "JEFF jeff"], ["bank_name", "I&M Bank"], ["account_number", "14567276"], ["bank_code", "005"], ["branch_code", "9487h"], ["telephone_number", "075634738735"], ["user_id", 10], ["created_at", "2022-09-21 01:28:05.628961"], ["updated_at", "2022-09-21 01:28:05.628961"], ["id_number", 87645362]]
+  [1m[36mTRANSACTION (40.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUserDetail Load (1.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" ORDER BY "user_details"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]

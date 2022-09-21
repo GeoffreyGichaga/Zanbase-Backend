@@ -13,7 +13,8 @@ class UserDetailsController < ApplicationController
 
 
 
-
+ # jeff id = 10 
+# UserDetail.create(user_id: 10,name_on_account: "JEFF jeff",bank_name: "I&M Bank",account_number: "14567276",bank_code: "005",branch_code: "9487h",telephone_number: "075634738735",id_number: 87645362)
 
     private
 
