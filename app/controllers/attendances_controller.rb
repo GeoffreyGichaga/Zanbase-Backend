@@ -18,10 +18,7 @@ class AttendancesController < ApplicationController
         render json: attendances, status: :ok
     end
 
-    # def generate
-    #     attendances = @current_user.attendances
-    #     render json: attendances, status: :ok
-    # end 
+   
 
    
 
