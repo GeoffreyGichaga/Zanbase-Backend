@@ -1,6 +1,6 @@
 class UserDetail < ApplicationRecord
     belongs_to :user
-    has_many :pvs ,through: :user
+    has_many :pvs , through: :user
 
 
     validates :name_on_account, uniqueness: true, presence: true

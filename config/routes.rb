@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pvs, only: [:index]
+  # resources :pvs
   resources :tasks
   resources :departments, only: [:create,:update]
   resources :supervisors, only: [:create,:update]
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get "/me", to: "users#show"
 
+  get "/pvs", to: "pvs#create"
 
 
   delete "/logout", to: "sessions#destroy"

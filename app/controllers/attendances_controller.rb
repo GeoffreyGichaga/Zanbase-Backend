@@ -25,7 +25,7 @@ class AttendancesController < ApplicationController
 
 # Attendance.create(user_id: "10",date: "21/09/2002", timeIn: "0800",timeOut: "1700",activities: "coding",sign: "G.G",checkedBy: "JN")
    
-:user_id,:date,:timeIn,:timeOut,:activities,:sign,:checkedBy
+# :user_id,:date,:timeIn,:timeOut,:activities,:sign,:checkedBy
 
     private
     def attendance_params

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_one :user_detail
-    has_many :attendance
+    has_many :attendances
     belongs_to :supervisor
     belongs_to :department
     has_many :tasks
@@ -15,6 +15,9 @@ class User < ApplicationRecord
     validates :supervisor, presence: true
     validates :password_digest, presence: true, length: {minimum:4, maximum:70}
 
+    # def self.full_name
+    #     "#{}"
+    # end
 end
 
 
