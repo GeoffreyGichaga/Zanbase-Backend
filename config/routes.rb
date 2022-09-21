@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pvs
   resources :tasks
   resources :departments, only: [:create,:update]
   resources :supervisors, only: [:create,:update]
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#create"
 
-  get "/me", to: "sessions#show"
+  get "/me", to: "users#show"
 
 
 

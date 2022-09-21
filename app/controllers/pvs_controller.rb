@@ -1,0 +1,2 @@
+class PvsController < ApplicationController
+end

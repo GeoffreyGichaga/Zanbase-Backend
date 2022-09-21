@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
    # show route
     def show
+        
         render json: @current_user, status: :ok
     end
 
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.permit(:firstname,:lastname,:email,:username,:role,:supervisor,:password)
+        params.permit(:firstname,:lastname,:email,:username,:role,:supervisor,:password,:org)
     end 
 
    

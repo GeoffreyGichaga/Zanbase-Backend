@@ -27471,3 +27471,614 @@ Migrating to AddPersonalIdNumberToUserDetail (20220920232739)
   [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (50.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 10], ["LIMIT", 11]]
+  [1m[36mUser Load (18.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 10], ["LIMIT", 11]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 10], ["LIMIT", 11]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 10], ["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 /* loading for inspect */ LIMIT $2[0m  [["id", 10], ["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:38:46 +0300
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 4124)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:38:48 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 649)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:39:18 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.0ms | Allocations: 648)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:39:18 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:15 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 648)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:15 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:29 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 648)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:29 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:46 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:46 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:54 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:40:54 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:41:05 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:41:05 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:42:05 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:42:06 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:42:43 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:42:43 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:42:54 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:42:54 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:00 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:00 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:12 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:12 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:22 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:22 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:39 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:39 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:46 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:43:46 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:44:18 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:44:18 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:45:23 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 12ms (Allocations: 645)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:45:23 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 4ms (Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:50:27 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 26ms (Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:50:27 +0300
+Processing by SessionsController#show as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 4ms (Allocations: 646)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:52:09 +0300
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 130ms (Allocations: 2902)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:52:11 +0300
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 17ms (Allocations: 640)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:54:58 +0300
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 55ms (Allocations: 2895)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:54:59 +0300
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 2ms (Allocations: 641)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started POST "/login" for 127.0.0.1 at 2022-09-21 02:55:21 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"geofrey@zanaafrica.org", "password"=>"[FILTERED]", "session"=>{"email"=>"geofrey@zanaafrica.org", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "geofrey@zanaafrica.org"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 1326ms (Views: 12.2ms | ActiveRecord: 282.8ms | Allocations: 14696)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-09-21 02:55:23 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-09-21 02:55:23 +0300
+Processing by TargetsController#index as */*
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 30ms (ActiveRecord: 3.5ms | Allocations: 849)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-09-21 02:55:23 +0300
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.7ms | Allocations: 734)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (125.6ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 344ms (Views: 20.2ms | ActiveRecord: 290.8ms | Allocations: 34481)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-09-21 02:55:23 +0300
+Processing by TargetsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (0.3ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 29ms (Views: 12.1ms | ActiveRecord: 0.8ms | Allocations: 1275)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:55:30 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (224.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (50.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mTask Load (44.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (572.55ms)
+Completed 200 OK in 641ms (Views: 276.0ms | ActiveRecord: 354.8ms | Allocations: 24757)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-21 02:55:31 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (1.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (84.3ms)
+Completed 200 OK in 117ms (Views: 84.3ms | ActiveRecord: 2.8ms | Allocations: 5229)
+
+
+Started POST "/user_details" for 127.0.0.1 at 2022-09-21 02:56:03 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>10, "name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"223678193", "bank_code"=>"kdg7853", "branch_code"=>"fhjbi3478", "telephone_number"=>"0712345678", "id_number"=>"46358729", "user_detail"=>{"name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"223678193", "bank_code"=>"kdg7853", "branch_code"=>"fhjbi3478", "telephone_number"=>"0712345678", "user_id"=>10, "id_number"=>"46358729"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (45.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Geoffrey "], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "223678193"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "0712345678"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (95.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+Completed 422 Unprocessable Entity in 578ms (ActiveRecord: 148.0ms | Allocations: 6802)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Telephone number has already been taken):
+  
+app/controllers/user_details_controller.rb:3:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-21 02:56:49 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>10, "name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"437689y2nkjvs", "bank_code"=>"43g3bk", "branch_code"=>"berkju38753", "telephone_number"=>"0787654321", "id_number"=>"8647532698", "user_detail"=>{"name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"437689y2nkjvs", "bank_code"=>"43g3bk", "branch_code"=>"berkju38753", "telephone_number"=>"0787654321", "user_id"=>10, "id_number"=>"8647532698"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Geoffrey "], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "437689y2nkjvs"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "0787654321"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 4.4ms | Allocations: 4841)
+
+
+  
+ActiveModel::RangeError (8647532698 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/user_details_controller.rb:3:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-21 02:57:33 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>10, "name_on_account"=>"Geoffrey", "bank_name"=>"Git", "account_number"=>"9358672974", "bank_code"=>"g739", "branch_code"=>"fjk7864", "telephone_number"=>"0787654321", "id_number"=>"357869278246", "user_detail"=>{"name_on_account"=>"Geoffrey", "bank_name"=>"Git", "account_number"=>"9358672974", "bank_code"=>"g739", "branch_code"=>"fjk7864", "telephone_number"=>"0787654321", "user_id"=>10, "id_number"=>"357869278246"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Geoffrey"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "9358672974"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "0787654321"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 8.1ms | Allocations: 4759)
+
+
+  
+ActiveModel::RangeError (357869278246 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/user_details_controller.rb:3:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-21 02:58:40 +0300
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>10, "name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"736472987193", "bank_code"=>"uh8754", "branch_code"=>"jkng3593", "telephone_number"=>"829476329471", "id_number"=>"34678928701252", "user_detail"=>{"name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"736472987193", "bank_code"=>"uh8754", "branch_code"=>"jkng3593", "telephone_number"=>"829476329471", "user_id"=>10, "id_number"=>"34678928701252"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Geoffrey "], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (4.3ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "736472987193"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "829476329471"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 221.8ms | Allocations: 17184)
+
+
+  
+ActiveModel::RangeError (34678928701252 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/user_details_controller.rb:3:in `create'
+Started POST "/user_details" for 127.0.0.1 at 2022-09-21 02:59:20 +0300
+  [1m[35m (87.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserDetailsController#create as */*
+  Parameters: {"user_id"=>10, "name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"y745y9834203", "bank_code"=>"rejkbrw485947", "branch_code"=>"g38959764", "telephone_number"=>"riogu45308", "id_number"=>"4t893y78085", "user_detail"=>{"name_on_account"=>"Geoffrey ", "bank_name"=>"Git", "account_number"=>"y745y9834203", "bank_code"=>"rejkbrw485947", "branch_code"=>"g38959764", "telephone_number"=>"riogu45308", "user_id"=>10, "id_number"=>"4t893y78085"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :user_detail[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."name_on_account" = $1 LIMIT $2[0m  [["name_on_account", "Geoffrey "], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."account_number" = $1 LIMIT $2[0m  [["account_number", "y745y9834203"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "user_details" WHERE "user_details"."telephone_number" = $1 LIMIT $2[0m  [["telephone_number", "riogu45308"], ["LIMIT", 1]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mUserDetail Create (50.1ms)[0m  [1m[32mINSERT INTO "user_details" ("name_on_account", "bank_name", "account_number", "bank_code", "branch_code", "telephone_number", "user_id", "created_at", "updated_at", "id_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name_on_account", "Geoffrey "], ["bank_name", "Git"], ["account_number", "y745y9834203"], ["bank_code", "rejkbrw485947"], ["branch_code", "g38959764"], ["telephone_number", "riogu45308"], ["user_id", 10], ["created_at", "2022-09-20 23:59:21.625532"], ["updated_at", "2022-09-20 23:59:21.625532"], ["id_number", 4]]
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (81.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_details_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/user_details_controller.rb:4:in `create'
+[active_model_serializers] Rendered UserDetailSerializer with ActiveModelSerializers::Adapter::Attributes (33.86ms)
+Completed 201 Created in 447ms (Views: 54.1ms | ActiveRecord: 150.7ms | Allocations: 36214)
+
+

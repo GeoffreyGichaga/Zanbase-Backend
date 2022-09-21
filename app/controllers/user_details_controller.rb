@@ -18,7 +18,7 @@ class UserDetailsController < ApplicationController
     private
 
     def user_payment_details_params
-        params.permit(:user_id,:name_on_account,:bank_name,:account_number,:bank_code,:branch_code,:telephone_number)
+        params.permit(:user_id,:name_on_account,:bank_name,:account_number,:bank_code,:branch_code,:telephone_number,:id_number)
     end 
 
     
