@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pvs
+  resources :pvs, only: [:index]
   resources :tasks
   resources :departments, only: [:create,:update]
   resources :supervisors, only: [:create,:update]
