@@ -6,9 +6,54 @@ class PvsController < ApplicationController
         render json: users_pv, status: :ok                
     end
 
+    # generate payment request
+    def payment_request_form
+        generated_by = "#{@current_user.firstname} #{@current_user.lastname}"
+        if(@current_user.org == "ZanaAfrica Programs")
+            budget_holder = "Roopal Thaker"
+        else
+            budget_holder =  "Megan Mukuria"
+        end 
+        payee = generated_by
+        
+        if(@current_user.org == "ZanaAfrica Programs")
+            paid_by = "ZAP"
+        else
+            paid_by = "ZAG"
+        end 
+
+        telephone = @current_user.user_detail.telephone_number
+        account = @current_user.user_detail.account_number
+        bank = @current_user.user_detail.bank_name
+
+        # Description 
+        description = "Intern stipend for #{generated_by} from 14th September - 13th October"
+        # 
+        cost = @current_user.attendance.count * 500
+
+        if(@current_user.role = "Intern")
+            budget_code = 8410
+        else
+            budget_code = 8100
+        end 
+
+        all_info = [{
+            generated_by => generated_by,
+            budget_holder => budget_holder,
+            payee => payee,
+            paid_by => paid_by,
+            telephone => telephone,
+            account => account,
+            bank => bank  
+        }]
+
+        render json: all_info, status: :ok
+
+    end 
+
 
     # User's Creating Pv's
-
+ 
     def create
         # date of generating pv 
         fdate = Time.new
@@ -64,34 +109,35 @@ class PvsController < ApplicationController
     
 
         new_pv = Pv.create(
-            employee_details : [
+            employee_details => [
                 {
-                    employee_id 
-                    daily_stipend 
-                    start_day_of_the_week 
-                    end_date_of_the_week 
-                    number_of_days_worked 
-                    amount_payable 
+                    employee_id => employee_id, 
+                    daily_stipend => daily_stipend ,
+                    start_day_of_the_week => start_day_of_the_week ,
+                    end_date_of_the_week => end_date_of_the_week ,
+                    number_of_days_worked => number_of_days_worked ,
+                    amount_payable => amount_payable 
                 }
 
             ],
-            payment_details : [
+            
+            payment_details => [
                 {
-                    name_on_account ,
-                    bank ,
-                    account ,
-                    bank_code ,
-                    branch_code ,
-                    telephone 
+                    name_on_account => name_on_account ,
+                    bank => bank ,
+                    account => account ,
+                    bank_code => bank_code ,
+                    branch_code => branch_code ,
+                    telephone => telephone 
                 }
             ],
-            prepared_by ,
-            approved_by ,
-            authorized_by, 
-            date,
-            org ,
-            program,
-            function 
+            prepared_by => prepared_by ,
+            approved_by => approved_by ,
+            authorized_by => authorized_by, 
+            date => date,
+            org => org ,
+            program => program,
+            function => function 
 
         ) 
         render json: new_pv, status: :created

@@ -2,9 +2,9 @@ class AttendancesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid,with: :render_unprocessable_entity
 
     def index
-        attendances = @current_user.attendance
-        render json: attendances, status: :ok         
-    end
+        att = @current_user.attendance
+        render json: att, status: :ok         
+    end 
 
     def create
         new_attendances = Attendance.create!(attendance_params)
@@ -17,6 +17,11 @@ class AttendancesController < ApplicationController
         attendances = Attendance.where(user_id:  @current_user)
         render json: attendances, status: :ok
     end
+
+    # def generate
+    #     attendances = @current_user.attendances
+    #     render json: attendances, status: :ok
+    # end 
 
    
 

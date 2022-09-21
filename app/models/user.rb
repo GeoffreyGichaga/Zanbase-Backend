@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_one :user_detail
-    has_many :attendances
+    has_many :attendance
     belongs_to :supervisor
     belongs_to :department
     has_many :tasks

@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
    # show route
     def show
-        
         render json: @current_user, status: :ok
     end
 

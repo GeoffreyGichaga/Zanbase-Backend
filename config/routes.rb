@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # resources :pvs
+  resources :pvs
   resources :tasks
   resources :departments, only: [:create,:update]
   resources :supervisors, only: [:create,:update]
@@ -20,5 +20,10 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   mount ActionCable.server => '/cable'
+
+  # attendance register in pdf payment_request_form
+  # get "generate_attendance", to: "attendances/generate"
+  # payment Request
+  get "payment_request", to: "pvs#payment_request_form"
 
 end
