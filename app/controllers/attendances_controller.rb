@@ -14,7 +14,7 @@ class AttendancesController < ApplicationController
     end  
      
     def show
-        attendances = Attendance.where(user_id:  @current_user)
+        attendances = Attendance.where(user_id: @current_user)
         render json: attendances, status: :ok
     end
 

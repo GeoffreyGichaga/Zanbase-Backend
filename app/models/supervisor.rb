@@ -1,7 +1,7 @@
 class Supervisor < ApplicationRecord
-    has_many :users
+    # has_many :users
     has_many :tasks
-    # belongs_to :department
+    belongs_to :department
 
 
     validates :name, presence: true

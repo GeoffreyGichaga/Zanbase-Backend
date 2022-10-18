@@ -11,4 +11,21 @@ Tutorial.create(image_url: "https://cms-assets.tutsplus.com/cdn-cgi/image/width=
      description: "15 Top Tips to Work Effectively From Home (Remotely in 2022)",
      video_url: "https://www.youtube.com/watch?v=8QpHdZsHoe4"
     )
+
+User.create(firstname: "Geoffrey ",lastname: "Gichaga", email: "geofrey@zanaafrica.org", username: "geofrey@zanaafrica.org", role: "Admin", supervisor: "Angie" ,password: "test",org: "ZAP")
+
 puts "Done Seeding "
+
+
+
+# t.string "firstname"
+# t.string "lastname"
+# t.string "email"
+# t.string "username"
+# t.string "role"
+# t.string "supervisor"
+# t.string "password_digest"
+
+
+# User.create(firstname: "Geoffrey ",lastname: "Gichaga", email: "geofrey@zanaafrica.org", username: "geofrey@zanaafrica.org", role: "Admin", supervisor: "Angie",password: "test")
+# firstname,:lastname,:email,:username,:role,:supervisor,:password,:org

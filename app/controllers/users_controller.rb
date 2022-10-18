@@ -3,8 +3,8 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid,with: :render_unprocessable_entity
 
     def create
-        user = User.create!(user_params)
-        render json: user , status: :created
+        @user = User.create!(user_params)
+        render json: @user , status: :created
     end 
 
 
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.permit(:firstname,:lastname,:email,:username,:role,:supervisor,:password,:org)
+        params.permit(:firstname,:lastname,:email,:username,:role,:supervisor,:password,:org,:department_id)
     end 
 
    

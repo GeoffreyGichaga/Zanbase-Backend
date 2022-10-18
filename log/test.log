@@ -1,0 +1,159 @@
+  [1m[35m (81.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zanbase_test"[0m
+  [1m[35m (254.6ms)[0m  [1m[35mCREATE DATABASE "zanbase_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendances" CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" bigserial primary key, "date" character varying, "timeIn" character varying, "timeOut" character varying, "activities" character varying, "sign" character varying, "checkedBy" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "departments" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "departments" ("id" bigserial primary key, "name" character varying, "organisation" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "pvs" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "pvs" ("id" bigserial primary key, "employee_details" character varying, "payment_details" character varying, "prepared_by" character varying, "approved_by" character varying, "authorized_by" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer, "date" character varying, "org" character varying, "program" character varying, "function" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "supervisors" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" bigserial primary key, "name" character varying, "role" character varying, "department" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "targets" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "targets" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tasks" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "supervisor_id" integer, "user_id" integer, "task_title" character varying, "task_description" character varying, "task_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "tutorials" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "tutorials" ("id" bigserial primary key, "image_url" character varying, "title" character varying, "description" character varying, "video_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_details" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "user_details" ("id" bigserial primary key, "name_on_account" character varying, "bank_name" character varying, "account_number" character varying, "bank_code" character varying, "branch_code" character varying, "telephone_number" character varying, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "id_number" integer)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "email" character varying, "username" character varying, "role" character varying, "supervisor" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_details_id" integer, "attendance_id" integer, "org" character varying, "function" character varying, "pv_id" integer)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220921033416)[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220801224219),
+(20220804100145),
+(20220805035313),
+(20220805052428),
+(20220817134508),
+(20220823014535),
+(20220823014912),
+(20220907181151),
+(20220916015701),
+(20220916021427),
+(20220919032408),
+(20220920232242),
+(20220920232739),
+(20220921000229),
+(20220921002414),
+(20220921002527);
+
+[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-10-17 15:56:38.640300"], ["updated_at", "2022-10-17 15:56:38.640300"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "afe467ed06d8c3afd3b8ae22ee9a45996ebaac98"], ["created_at", "2022-10-17 15:56:38.652091"], ["updated_at", "2022-10-17 15:56:38.652091"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (225.0ms)[0m  [1m[35mCREATE DATABASE "zanbase_test-0" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendances" CASCADE[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" bigserial primary key, "date" character varying, "timeIn" character varying, "timeOut" character varying, "activities" character varying, "sign" character varying, "checkedBy" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "departments" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "departments" ("id" bigserial primary key, "name" character varying, "organisation" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "pvs" CASCADE[0m
+  [1m[35m (294.9ms)[0m  [1m[35mCREATE DATABASE "zanbase_test-1" ENCODING = 'unicode'[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "pvs" ("id" bigserial primary key, "employee_details" character varying, "payment_details" character varying, "prepared_by" character varying, "approved_by" character varying, "authorized_by" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer, "date" character varying, "org" character varying, "program" character varying, "function" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "supervisors" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" bigserial primary key, "name" character varying, "role" character varying, "department" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "targets" CASCADE[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "targets" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tasks" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "supervisor_id" integer, "user_id" integer, "task_title" character varying, "task_description" character varying, "task_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tutorials" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "tutorials" ("id" bigserial primary key, "image_url" character varying, "title" character varying, "description" character varying, "video_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_details" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "user_details" ("id" bigserial primary key, "name_on_account" character varying, "bank_name" character varying, "account_number" character varying, "bank_code" character varying, "branch_code" character varying, "telephone_number" character varying, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "id_number" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendances" CASCADE[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "email" character varying, "username" character varying, "role" character varying, "supervisor" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_details_id" integer, "attendance_id" integer, "org" character varying, "function" character varying, "pv_id" integer)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" bigserial primary key, "date" character varying, "timeIn" character varying, "timeOut" character varying, "activities" character varying, "sign" character varying, "checkedBy" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "departments" CASCADE[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220921033416)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "departments" ("id" bigserial primary key, "name" character varying, "organisation" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "pvs" CASCADE[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220801224219),
+(20220804100145),
+(20220805035313),
+(20220805052428),
+(20220817134508),
+(20220823014535),
+(20220823014912),
+(20220907181151),
+(20220916015701),
+(20220916021427),
+(20220919032408),
+(20220920232242),
+(20220920232739),
+(20220921000229),
+(20220921002414),
+(20220921002527);
+
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "pvs" ("id" bigserial primary key, "employee_details" character varying, "payment_details" character varying, "prepared_by" character varying, "approved_by" character varying, "authorized_by" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer, "date" character varying, "org" character varying, "program" character varying, "function" character varying)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "supervisors" CASCADE[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" bigserial primary key, "name" character varying, "role" character varying, "department" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "targets" CASCADE[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-10-17 15:56:39.388960"], ["updated_at", "2022-10-17 15:56:39.388960"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "targets" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tasks" CASCADE[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "supervisor_id" integer, "user_id" integer, "task_title" character varying, "task_description" character varying, "task_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tutorials" CASCADE[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "afe467ed06d8c3afd3b8ae22ee9a45996ebaac98"], ["created_at", "2022-10-17 15:56:39.403558"], ["updated_at", "2022-10-17 15:56:39.403558"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "tutorials" ("id" bigserial primary key, "image_url" character varying, "title" character varying, "description" character varying, "video_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_details" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "user_details" ("id" bigserial primary key, "name_on_account" character varying, "bank_name" character varying, "account_number" character varying, "bank_code" character varying, "branch_code" character varying, "telephone_number" character varying, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "id_number" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "email" character varying, "username" character varying, "role" character varying, "supervisor" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_details_id" integer, "attendance_id" integer, "org" character varying, "function" character varying, "pv_id" integer)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220921033416)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220801224219),
+(20220804100145),
+(20220805035313),
+(20220805052428),
+(20220817134508),
+(20220823014535),
+(20220823014912),
+(20220907181151),
+(20220916015701),
+(20220916021427),
+(20220919032408),
+(20220920232242),
+(20220920232739),
+(20220921000229),
+(20220921002414),
+(20220921002527);
+
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-10-17 15:56:39.452501"], ["updated_at", "2022-10-17 15:56:39.452501"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "afe467ed06d8c3afd3b8ae22ee9a45996ebaac98"], ["created_at", "2022-10-17 15:56:39.463249"], ["updated_at", "2022-10-17 15:56:39.463249"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
