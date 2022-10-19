@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         end
     end  
 
-    
+     
  
 
     def show
