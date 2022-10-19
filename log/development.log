@@ -37524,3 +37524,16 @@ No serializer found for resource: {"Geoffrey  Gichaga"=>"Geoffrey  Gichaga", "Me
 Completed 200 OK in 27ms (Views: 1.1ms | ActiveRecord: 17.3ms | Allocations: 2088)
 
 
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-19 10:29:51 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+No serializer found for resource: {"Geoffrey  Gichaga"=>"Geoffrey  Gichaga", "Megan Mukuria"=>"Megan Mukuria", "ZAG"=>"ZAG", "0712345678"=>"0712345678", "12345678"=>"12345678", "I&M"=>"I&M"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.01ms)
+Completed 200 OK in 296ms (Views: 8.0ms | ActiveRecord: 37.7ms | Allocations: 21345)
+
+
