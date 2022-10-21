@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_21_020455) do
+ActiveRecord::Schema.define(version: 2022_10_21_023005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_10_21_020455) do
     t.string "authorized_by_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "payment_request_forms", force: :cascade do |t|
@@ -83,12 +84,15 @@ ActiveRecord::Schema.define(version: 2022_10_21_020455) do
     t.string "approved_by_budget_holder_2_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "pvs", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "payment_approval_form_id"
+    t.integer "payment_request_form_id"
   end
 
   create_table "supervisors", force: :cascade do |t|
