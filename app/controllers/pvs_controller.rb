@@ -247,7 +247,7 @@ Key Infomation to produce includes:
 
     # User's Creating Pv's
  
-    def create
+    def payment_approval_form
         # 1. Date - Date of generating pv 
         current_date = Time.new
         date = "#{current_date.day}/#{current_date.month}/#{current_date.year}"
@@ -282,13 +282,13 @@ Key Infomation to produce includes:
         employee_id = @current_user.user_detail.id_number
 
         # 7. Start Date of the Week 
-        start_day_of_the_week = "#{@current_user.attendances.first.date}"
+        start_day_of_the_week = "#{@current_user.attendance.first.date}"
         
         # 8. End Date of the Week
-        end_date_of_the_week  = "#{@current_user.attendances.last.date}"
+        end_date_of_the_week  = "#{@current_user.attendance.last.date}"
 
         # 9. Number of days Worked
-        number_of_days_worked = @current_user.attendances.count
+        number_of_days_worked = @current_user.attendance.count
 
         # 10.Amount Payable
         # This Varies depending on the type of contract/ salary terms with the HR
@@ -364,18 +364,18 @@ Key Infomation to produce includes:
             # Approval section 
             :prepared_by_name => prepared_by,
             :user_signature_sign => user_signature,
-            :prepared_by_date => prepared_by_date
+            :prepared_by_date => prepared_by_date,
 
             # Supervisor
-            # :approved_by_name => "Not Approved",
-            # :approved_by_signature => "Not Approved",
-            # :approved_by_date => "Not Approved",
+            :approved_by_name => "Not Approved",
+            :approved_by_signature => "Not Approved",
+            :approved_by_date => "Not Approved",
 
             # Authorizor 
 
-            # :authorized_by_name => "Not Approved",
-            # :authorized_by_sign => "Not Approved",
-            # :authorized_by_date => "Not Approved"
+            :authorized_by_name => "Not Approved",
+            :authorized_by_sign => "Not Approved",
+            :authorized_by_date => "Not Approved"
 
 
 

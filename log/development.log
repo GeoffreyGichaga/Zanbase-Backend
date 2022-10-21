@@ -39380,3 +39380,605 @@ Processing by PvsController#payment_request_form as */*
 Completed 200 OK in 375ms (Views: 41.1ms | ActiveRecord: 9.8ms | Allocations: 3716)
 
 
+Started GET "/attendances" for 127.0.0.1 at 2022-10-21 03:31:48 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (2.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (1.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (81.9ms)
+Completed 200 OK in 237ms (Views: 127.2ms | ActiveRecord: 12.6ms | Allocations: 7041)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:31:52 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (2.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (3.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (1.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.44ms)
+Completed 200 OK in 54ms (Views: 2.1ms | ActiveRecord: 15.3ms | Allocations: 3712)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:31:56 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (6.1ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 22ms (Views: 8.1ms | ActiveRecord: 6.4ms | Allocations: 1334)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:35:04 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (3.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (802.24ms)
+Completed 200 OK in 1897ms (Views: 780.7ms | ActiveRecord: 288.6ms | Allocations: 30865)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:35:07 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (441.79ms)
+Completed 200 OK in 500ms (Views: 414.9ms | ActiveRecord: 39.4ms | Allocations: 30838)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:36:17 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (291.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (887.23ms)
+Completed 200 OK in 976ms (Views: 581.9ms | ActiveRecord: 318.5ms | Allocations: 30801)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:36:18 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (165.75ms)
+Completed 200 OK in 175ms (Views: 167.4ms | ActiveRecord: 2.5ms | Allocations: 5320)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:36:42 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.19ms)
+Completed 200 OK in 188ms (Views: 5.1ms | ActiveRecord: 41.5ms | Allocations: 26681)
+
+
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 03:36:44 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (1.9ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:282:in `payment_approval_form'
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 3.7ms | Allocations: 4633)
+
+
+  
+NoMethodError (undefined method `attendances' for #<User:0x00007fc7bd67b088>
+Did you mean?  attendance
+               attendance=
+               attendance_ids
+               attendance_id):
+  
+app/controllers/pvs_controller.rb:285:in `payment_approval_form'
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 03:36:50 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.9ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:282:in `payment_approval_form'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.2ms | Allocations: 4561)
+
+
+  
+NoMethodError (undefined method `attendances' for #<User:0x00007fc7bd59bfa0>
+Did you mean?  attendance
+               attendance=
+               attendance_ids
+               attendance_id):
+  
+app/controllers/pvs_controller.rb:285:in `payment_approval_form'
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 03:37:36 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:282:in `payment_approval_form'
+Completed 500 Internal Server Error in 454ms (ActiveRecord: 59.8ms | Allocations: 20008)
+
+
+  
+NoMethodError (undefined method `attendances' for #<User:0x00007fc7bd79a478>
+Did you mean?  attendance
+               attendance=
+               attendance_ids
+               attendance_id):
+  
+app/controllers/pvs_controller.rb:285:in `payment_approval_form'
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 03:38:01 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:282:in `payment_approval_form'
+  [1m[36mAttendance Load (2.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:285:in `payment_approval_form'
+  [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:288:in `payment_approval_form'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:291:in `payment_approval_form'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:296:in `payment_approval_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 201 Created in 225ms (Views: 15.8ms | ActiveRecord: 21.4ms | Allocations: 24081)
+
+
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 03:38:45 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => "Not Appr...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+...oved_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+...by_signature => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+...oved_by_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: syntax error, unexpected ',', expecting `end'
+...ized_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+...ized_by_sign => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:384: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+):
+  
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:376: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:384: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:376: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:384: syntax error, unexpected '}', expecting `end'
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 03:39:02 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:282:in `payment_approval_form'
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:285:in `payment_approval_form'
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:288:in `payment_approval_form'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:291:in `payment_approval_form'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:296:in `payment_approval_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 201 Created in 145ms (Views: 3.1ms | ActiveRecord: 22.9ms | Allocations: 24193)
+
+
+Started GET "/cable" for ::1 at 2022-10-21 03:54:56 +0300
+Started GET "/attendances" for 127.0.0.1 at 2022-10-21 03:54:56 +0300
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:54:57 +0300
+Processing by UsersController#show as */*
+Processing by AttendancesController#index as */*
+  Parameters: {"attendance"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (1.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mAttendance Load (47.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (1.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.45ms)
+Completed 200 OK in 1611ms (Views: 162.0ms | ActiveRecord: 305.8ms | Allocations: 24008)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-21 03:54:59 +0300
+Processing by AttendancesController#index as */*
+  Parameters: {"attendance"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+Started GET "/cable/" [WebSocket] for ::1 at 2022-10-21 03:54:59 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+[active_model_serializers]   [1m[36mUserDetail Load (11.8ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mDepartment Load (1.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (437.69ms)
+Completed 200 OK in 504ms (Views: 440.5ms | ActiveRecord: 13.2ms | Allocations: 12433)
+
+
+[active_model_serializers]   [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (925.95ms)
+Completed 200 OK in 2651ms (Views: 742.9ms | ActiveRecord: 404.6ms | Allocations: 40460)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:54:59 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (33.18ms)
+Completed 200 OK in 101ms (Views: 35.5ms | ActiveRecord: 2.8ms | Allocations: 5331)
+
+
+AttendancesChannel is transmitting the subscription confirmation
+AttendancesChannel is streaming from attendances
+AttendancesChannel is transmitting the subscription confirmation
+AttendancesChannel is streaming from attendances
+Started POST "/attendances" for 127.0.0.1 at 2022-10-21 03:55:29 +0300
+Processing by AttendancesController#create as */*
+  Parameters: {"user_id"=>1, "date"=>"21/10/2022", "timeIn"=>"0800", "timeOut"=>"1700", "activities"=>"Testing PV generation", "sign"=>"G.G", "checkedBy"=>"JN", "attendance"=>{"date"=>"21/10/2022", "timeIn"=>"0800", "timeOut"=>"1700", "activities"=>"Testing PV generation", "sign"=>"G.G", "checkedBy"=>"JN", "user_id"=>1}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[31mUnpermitted parameter: :attendance[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/attendances_controller.rb:10:in `create'
+  [1m[36mAttendance Create (18.1ms)[0m  [1m[32mINSERT INTO "attendances" ("date", "timeIn", "timeOut", "activities", "sign", "checkedBy", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["date", "21/10/2022"], ["timeIn", "0800"], ["timeOut", "1700"], ["activities", "Testing PV generation"], ["sign", "G.G"], ["checkedBy", "JN"], ["created_at", "2022-10-21 00:55:29.937004"], ["updated_at", "2022-10-21 00:55:29.937004"], ["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/attendances_controller.rb:10:in `create'
+[ActionCable] Broadcasting to attendances: #<Attendance id: 6, date: "21/10/2022", timeIn: "0800", timeOut: "1700", activities: "Testing PV generation", sign: "G.G", checkedBy: "JN", created_at: "2022-10-21 00:55:29.937004000 +0000", updated_at: "2022-10-21 00:55:29.937004000 +0000", user_id: 1>
+[active_model_serializers]   [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:12:in `create'
+AttendancesChannel transmitting {"id"=>6, "date"=>"21/10/2022", "timeIn"=>"0800", "timeOut"=>"1700", "activities"=>"Testing PV generation", "sign"=>"G.G", "checkedBy"=>"JN", "created_at"=>"2022-10-21T00:55:29.937Z", "updated_at"=>"2022-10-21T00:55:29.937Z", "user_id"=>1} (via streamed from attendances)
+AttendancesChannel transmitting {"id"=>6, "date"=>"21/10/2022", "timeIn"=>"0800", "timeOut"=>"1700", "activities"=>"Testing PV generation", "sign"=>"G.G", "checkedBy"=>"JN", "created_at"=>"2022-10-21T00:55:29.937Z", "updated_at"=>"2022-10-21T00:55:29.937Z", "user_id"=>1} (via streamed from attendances)
+[active_model_serializers]   [1m[36mAttendance Load (4.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:12:in `create'
+[active_model_serializers] Rendered AttendanceSerializer with ActiveModelSerializers::Adapter::Attributes (18.66ms)
+Completed 201 Created in 1096ms (Views: 16.0ms | ActiveRecord: 29.9ms | Allocations: 17679)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-10-21 03:55:33 +0300
+AttendancesChannel stopped streaming from attendances
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:55:38 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (2.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.66ms)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 6.6ms | Allocations: 5482)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:55:38 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (2.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (8.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (3.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (37.91ms)
+Completed 200 OK in 47ms (Views: 22.5ms | ActiveRecord: 17.8ms | Allocations: 5484)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-21 03:55:47 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (4.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (2.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.77ms)
+Completed 200 OK in 48ms (Views: 36.1ms | ActiveRecord: 7.7ms | Allocations: 8412)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:55:49 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (2.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (1.8ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (3.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.27ms)
+Completed 200 OK in 55ms (Views: 2.8ms | ActiveRecord: 18.6ms | Allocations: 3716)
+
+
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 03:55:57 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (2.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:282:in `payment_approval_form'
+  [1m[36mAttendance Load (4.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:285:in `payment_approval_form'
+  [1m[36mAttendance Load (5.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:288:in `payment_approval_form'
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:291:in `payment_approval_form'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:296:in `payment_approval_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.3ms)
+Completed 201 Created in 40ms (Views: 1.9ms | ActiveRecord: 15.9ms | Allocations: 3805)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-21 04:08:01 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (57.51ms)
+Completed 200 OK in 338ms (Views: 80.2ms | ActiveRecord: 75.4ms | Allocations: 12346)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-21 04:08:05 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (2.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (1.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.47ms)
+Completed 200 OK in 60ms (Views: 48.0ms | ActiveRecord: 5.2ms | Allocations: 8411)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 04:08:08 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (2.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (5.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (6.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.9ms)
+Completed 200 OK in 79ms (Views: 2.0ms | ActiveRecord: 18.7ms | Allocations: 3718)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-10-21 04:10:14 +0300
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:10:14 +0300
+Processing by UsersController#show as */*
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-21 04:10:14 +0300
+  [1m[36mUser Load (20.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (162.8ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (10.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by TargetsController#index as */*
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (28.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1036.79ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (1.0ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 392ms (Views: 10.8ms | ActiveRecord: 286.7ms | Allocations: 7734)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-10-21 04:10:15 +0300
+Processing by TargetsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (0.7ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.78ms)
+Completed 200 OK in 23ms (Views: 11.7ms | ActiveRecord: 1.2ms | Allocations: 1266)
+
+
+Completed 200 OK in 1158ms (Views: 840.2ms | ActiveRecord: 222.1ms | Allocations: 10405)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:10:15 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (31.99ms)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 2.9ms | Allocations: 5481)
+
+
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 24ms (ActiveRecord: 161.2ms | Allocations: 824)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-21 04:10:15 +0300
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 8ms (ActiveRecord: 1.6ms | Allocations: 722)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:11:29 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (2.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (119.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (4.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (407.21ms)
+Completed 200 OK in 453ms (Views: 288.0ms | ActiveRecord: 129.1ms | Allocations: 5497)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:11:29 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (2.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (199.95ms)
+Completed 200 OK in 220ms (Views: 196.1ms | ActiveRecord: 8.5ms | Allocations: 5481)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:30:51 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (4.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (431.67ms)
+Completed 200 OK in 2042ms (Views: 444.4ms | ActiveRecord: 136.8ms | Allocations: 9489)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:30:53 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.9ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (248.86ms)
+Completed 200 OK in 258ms (Views: 247.3ms | ActiveRecord: 3.7ms | Allocations: 5481)
+
+

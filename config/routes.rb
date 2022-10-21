@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get "/me", to: "users#show"
 
-  get "/pvs", to: "pvs#create"
+  
 
 
   delete "/logout", to: "sessions#destroy"
@@ -23,8 +23,13 @@ Rails.application.routes.draw do
 
   # attendance register in pdf payment_request_form
   # get "generate_attendance", to: "attendances/generate"
-  # payment Request
+
+
+  # Generating payment Request
   get "payment_request", to: "pvs#payment_request_form"
+
+  # Generating Payment approval Form 
+  get "/payment_approval", to: "pvs#payment_approval_form"
 
 end
    
