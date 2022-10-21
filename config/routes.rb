@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :payment_approval_forms
+  resources :payment_request_forms
   resources :pvs
   resources :tasks
   resources :departments, only: [:create,:update]

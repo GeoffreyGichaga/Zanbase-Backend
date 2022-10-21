@@ -23,6 +23,34 @@ class PvsController < ApplicationController
     end
 
 
+    # Users Creating PV's
+
+    def create
+        user_pv = @current_user.Pv.create!(payment_request_form)
+    end 
+
+    # Viewing a specific pv 
+
+
+
+
+    private
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Generate payment request
 =begin 
@@ -160,7 +188,6 @@ class PvsController < ApplicationController
         render json: payment_request_info, status: :ok
 
     end 
-
 
 
 
@@ -390,6 +417,7 @@ Key Infomation to produce includes:
     end
     
  end
+
 
 
 

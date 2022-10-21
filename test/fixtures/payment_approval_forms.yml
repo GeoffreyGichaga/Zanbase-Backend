@@ -1,0 +1,55 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prep_date: MyString
+  org: MyString
+  program: MyString
+  function: MyString
+  name: MyString
+  employee_id: MyString
+  start_day_of_the_week: MyString
+  end_date_of_the_week: MyString
+  number_of_days_worked: MyString
+  amount_payable: MyString
+  name_on_account: MyString
+  bank: MyString
+  account: MyString
+  bank_code: MyString
+  branch_code: MyString
+  telephone: MyString
+  prepared_by_name: MyString
+  user_signature_sign: MyString
+  prepared_by_date: MyString
+  approved_by_name: MyString
+  approved_by_signature: MyString
+  approved_by_date: MyString
+  authorized_by_name: MyString
+  authorized_by_sign: MyString
+  authorized_by_date: MyString
+
+two:
+  prep_date: MyString
+  org: MyString
+  program: MyString
+  function: MyString
+  name: MyString
+  employee_id: MyString
+  start_day_of_the_week: MyString
+  end_date_of_the_week: MyString
+  number_of_days_worked: MyString
+  amount_payable: MyString
+  name_on_account: MyString
+  bank: MyString
+  account: MyString
+  bank_code: MyString
+  branch_code: MyString
+  telephone: MyString
+  prepared_by_name: MyString
+  user_signature_sign: MyString
+  prepared_by_date: MyString
+  approved_by_name: MyString
+  approved_by_signature: MyString
+  approved_by_date: MyString
+  authorized_by_name: MyString
+  authorized_by_sign: MyString
+  authorized_by_date: MyString

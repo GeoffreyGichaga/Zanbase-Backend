@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_055442) do
+ActiveRecord::Schema.define(version: 2022_10_21_020455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,19 +34,61 @@ ActiveRecord::Schema.define(version: 2022_10_18_055442) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "pvs", force: :cascade do |t|
-    t.string "employee_details"
-    t.string "payment_details"
-    t.string "prepared_by"
-    t.string "approved_by"
-    t.string "authorized_by"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.string "date"
+  create_table "payment_approval_forms", force: :cascade do |t|
+    t.string "prep_date"
     t.string "org"
     t.string "program"
     t.string "function"
+    t.string "name"
+    t.string "employee_id"
+    t.string "start_day_of_the_week"
+    t.string "end_date_of_the_week"
+    t.string "number_of_days_worked"
+    t.string "amount_payable"
+    t.string "name_on_account"
+    t.string "bank"
+    t.string "account"
+    t.string "bank_code"
+    t.string "branch_code"
+    t.string "telephone"
+    t.string "prepared_by_name"
+    t.string "user_signature_sign"
+    t.string "prepared_by_date"
+    t.string "approved_by_name"
+    t.string "approved_by_signature"
+    t.string "approved_by_date"
+    t.string "authorized_by_name"
+    t.string "authorized_by_sign"
+    t.string "authorized_by_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "payment_request_forms", force: :cascade do |t|
+    t.string "generated_by"
+    t.string "budget_holder"
+    t.string "payee"
+    t.string "paid_by"
+    t.string "telephone"
+    t.string "account"
+    t.string "bank"
+    t.string "description"
+    t.string "cost"
+    t.string "budget_code"
+    t.string "checked_by"
+    t.string "checked_by_date"
+    t.string "approved_by_budget_holder_1"
+    t.string "approved_by_budget_holder_1_date"
+    t.string "approved_by_budget_holder_2"
+    t.string "approved_by_budget_holder_2_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pvs", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "supervisors", force: :cascade do |t|

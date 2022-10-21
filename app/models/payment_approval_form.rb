@@ -1,0 +1,2 @@
+class PaymentApprovalForm < ApplicationRecord
+end

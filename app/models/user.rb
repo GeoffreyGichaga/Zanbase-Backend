@@ -8,7 +8,12 @@ class User < ApplicationRecord
     # belongs_to :supervisor
     belongs_to :department
     has_many :tasks
+
+    # Pv 
     has_many :pvs
+    has_many :payment_request_forms, through: :pvs
+    has_many :payment_approval_forms, through: :pvs
+
     
 
     # Info Validations 

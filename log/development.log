@@ -39982,3 +39982,125 @@ Processing by UsersController#show as */*
 Completed 200 OK in 258ms (Views: 247.3ms | ActiveRecord: 3.7ms | Allocations: 5481)
 
 
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 04:33:03 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:282:in `payment_approval_form'
+  [1m[36mAttendance Load (5.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:285:in `payment_approval_form'
+  [1m[36mAttendance Load (1.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:288:in `payment_approval_form'
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:291:in `payment_approval_form'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:296:in `payment_approval_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.58ms)
+Completed 201 Created in 425ms (Views: 27.4ms | ActiveRecord: 14.5ms | Allocations: 3809)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:33:27 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (1.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (338.35ms)
+Completed 200 OK in 375ms (Views: 351.0ms | ActiveRecord: 10.7ms | Allocations: 5481)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 04:33:27 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (350.62ms)
+Completed 200 OK in 365ms (Views: 349.3ms | ActiveRecord: 3.2ms | Allocations: 5481)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPv Load (9.5ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mPv Load (0.3ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1 ORDER BY "pvs"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mPv Load (3.4ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 04:38:31 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:85:in `payment_request_form'
+  [1m[36mUserDetail Load (0.8ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:104:in `payment_request_form'
+  [1m[36mAttendance Load (1.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:129:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:130:in `payment_request_form'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:139:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 200 OK in 624ms (Views: 13.9ms | ActiveRecord: 98.3ms | Allocations: 26867)
+
+
+Started GET "/payment_approval" for 127.0.0.1 at 2022-10-21 04:38:43 +0300
+Processing by PvsController#payment_approval_form as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.9ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:305:in `payment_approval_form'
+  [1m[36mAttendance Load (1.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:308:in `payment_approval_form'
+  [1m[36mAttendance Load (2.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:311:in `payment_approval_form'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:314:in `payment_approval_form'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:319:in `payment_approval_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 201 Created in 53ms (Views: 0.7ms | ActiveRecord: 7.7ms | Allocations: 3806)
+
+
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePaymentRequestForms (20221021015010)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (90.3ms)[0m  [1m[35mCREATE TABLE "payment_request_forms" ("id" bigserial primary key, "generated_by" character varying, "budget_holder" character varying, "payee" character varying, "paid_by" character varying, "telephone" character varying, "account" character varying, "bank" character varying, "description" character varying, "cost" character varying, "budget_code" character varying, "checked_by" character varying, "checked_by_date" character varying, "approved_by_budget_holder_1" character varying, "approved_by_budget_holder_1_date" character varying, "approved_by_budget_holder_2" character varying, "approved_by_budget_holder_2_date" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221021015010"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePaymentApprovalForms (20221021015711)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "payment_approval_forms" ("id" bigserial primary key, "prep_date" character varying, "org" character varying, "program" character varying, "function" character varying, "name" character varying, "employee_id" character varying, "start_day_of_the_week" character varying, "end_date_of_the_week" character varying, "number_of_days_worked" character varying, "amount_payable" character varying, "name_on_account" character varying, "bank" character varying, "account" character varying, "bank_code" character varying, "branch_code" character varying, "telephone" character varying, "prepared_by_name" character varying, "user_signature_sign" character varying, "prepared_by_date" character varying, "approved_by_name" character varying, "approved_by_signature" character varying, "approved_by_date" character varying, "authorized_by_name" character varying, "authorized_by_sign" character varying, "authorized_by_date" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221021015711"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromPv (20221021020455)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6640941953182430775)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveColumnsFromPv (20221021020455)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "employee_details"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "payment_details"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "prepared_by"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "approved_by"[0m
+  [1m[35m (5.9ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "authorized_by"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "date"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "org"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "program"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "pvs" DROP COLUMN "function"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221021020455"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6640941953182430775)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
