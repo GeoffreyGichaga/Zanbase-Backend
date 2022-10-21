@@ -37537,3 +37537,1846 @@ No serializer found for resource: {"Geoffrey  Gichaga"=>"Geoffrey  Gichaga", "Me
 Completed 200 OK in 296ms (Views: 8.0ms | ActiveRecord: 37.7ms | Allocations: 21345)
 
 
+Started GET "/attendances" for 127.0.0.1 at 2022-10-19 10:55:51 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (2.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (92.09ms)
+Completed 200 OK in 477ms (Views: 205.1ms | ActiveRecord: 28.4ms | Allocations: 30764)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-19 10:56:28 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (1.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+No serializer found for resource: {"Geoffrey  Gichaga"=>"Geoffrey  Gichaga", "Megan Mukuria"=>"Megan Mukuria", "ZAG"=>"ZAG", "0712345678"=>"0712345678", "12345678"=>"12345678", "I&M"=>"I&M"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.2ms)
+Completed 200 OK in 75ms (Views: 2.3ms | ActiveRecord: 8.7ms | Allocations: 2086)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-19 10:57:41 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.74ms)
+Completed 200 OK in 353ms (Views: 6.1ms | ActiveRecord: 86.1ms | Allocations: 18812)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-19 10:59:28 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.21ms)
+Completed 200 OK in 204ms (Views: 4.4ms | ActiveRecord: 20.3ms | Allocations: 18696)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-19 10:59:58 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUserDetail Load (5.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 86ms (Views: 1.0ms | ActiveRecord: 27.7ms | Allocations: 18734)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-19 11:01:23 +0300
+Started GET "/me" for 127.0.0.1 at 2022-10-19 11:01:23 +0300
+Processing by UsersController#show as */*
+Started GET "/targets" for 127.0.0.1 at 2022-10-19 11:01:23 +0300
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Processing by TargetsController#index as */*
+[active_model_serializers]   [1m[36mUserDetail Load (1.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (2.3ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 200 OK in 223ms (Views: 15.6ms | ActiveRecord: 28.8ms | Allocations: 16274)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-10-19 11:01:23 +0300
+Processing by TargetsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (0.5ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 1266)
+
+
+Completed 404 Not Found in 198ms (ActiveRecord: 207.9ms | Allocations: 3306)
+
+
+[active_model_serializers]   [1m[36mDepartment Load (5.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (585.92ms)
+Completed 200 OK in 626ms (Views: 337.6ms | ActiveRecord: 255.6ms | Allocations: 36068)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-19 11:01:23 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.8ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (32.09ms)
+Completed 200 OK in 38ms (Views: 31.1ms | ActiveRecord: 2.2ms | Allocations: 5318)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-19 11:01:24 +0300
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (18.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 51ms (ActiveRecord: 18.0ms | Allocations: 722)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/me" for 127.0.0.1 at 2022-10-19 11:01:33 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (3.9ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (19.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (118.28ms)
+Completed 200 OK in 137ms (Views: 105.8ms | ActiveRecord: 28.0ms | Allocations: 5329)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-19 11:01:33 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (6.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (3.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (3.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (185.84ms)
+Completed 200 OK in 192ms (Views: 175.5ms | ActiveRecord: 13.8ms | Allocations: 5320)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/me" for 127.0.0.1 at 2022-10-19 11:03:57 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (1.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (1.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1226.33ms)
+Completed 200 OK in 1428ms (Views: 1204.4ms | ActiveRecord: 66.4ms | Allocations: 30978)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-19 11:03:59 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (1.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (123.95ms)
+Completed 200 OK in 225ms (Views: 192.2ms | ActiveRecord: 5.1ms | Allocations: 5318)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-19 11:04:01 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (2.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (1.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.94ms)
+Completed 200 OK in 39ms (Views: 25.2ms | ActiveRecord: 5.4ms | Allocations: 7043)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-19 11:04:11 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (3.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:41:in `payment_request_form'
+  [1m[36mUserDetail Load (1.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 23ms (Views: 0.9ms | ActiveRecord: 10.3ms | Allocations: 2609)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-20 09:37:52 +0300
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 4429)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-10-20 09:37:52 +0300
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 644)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 09:39:32 +0300
+Processing by AttendancesController#index as */*
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms | Allocations: 643)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 09:40:40 +0300
+Processing by AttendancesController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 644)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started DELETE "/logout" for 127.0.0.1 at 2022-10-20 09:41:44 +0300
+Processing by SessionsController#destroy as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 668)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-10-20 09:42:11 +0300
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 577)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started GET "/me" for 127.0.0.1 at 2022-10-20 09:42:11 +0300
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms | Allocations: 577)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:10:in `authorize'
+Started POST "/login" for 127.0.0.1 at 2022-10-20 09:42:18 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"geofrey@zanaafrica.org", "password"=>"[FILTERED]", "session"=>{"email"=>"geofrey@zanaafrica.org", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "geofrey@zanaafrica.org"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 507ms (Views: 4.2ms | ActiveRecord: 87.9ms | Allocations: 12678)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-20 09:42:19 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-10-20 09:42:19 +0300
+Processing by TargetsController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (5.5ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.26ms)
+Completed 200 OK in 46ms (Views: 13.0ms | ActiveRecord: 6.2ms | Allocations: 4084)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-10-20 09:42:19 +0300
+Processing by TargetsController#index as */*
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (0.9ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 24ms (Views: 2.2ms | ActiveRecord: 3.2ms | Allocations: 4401)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 19ms (ActiveRecord: 36.7ms | Allocations: 2256)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-20 09:42:19 +0300
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms | Allocations: 722)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/me" for 127.0.0.1 at 2022-10-20 09:44:42 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (6.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (4.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (2.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (436.55ms)
+Completed 200 OK in 771ms (Views: 376.4ms | ActiveRecord: 94.1ms | Allocations: 34836)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-20 09:44:43 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (3.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (1.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (500.58ms)
+Completed 200 OK in 777ms (Views: 393.9ms | ActiveRecord: 213.5ms | Allocations: 30814)
+
+
+Started GET "/cable" for ::1 at 2022-10-20 10:17:20 +0300
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 10:17:21 +0300
+Started GET "/me" for 127.0.0.1 at 2022-10-20 10:17:21 +0300
+Processing by UsersController#show as */*
+Processing by AttendancesController#index as */*
+  Parameters: {"attendance"=>{}}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mUser Load (523.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (194.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+Started GET "/cable/" [WebSocket] for ::1 at 2022-10-20 10:17:23 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+[active_model_serializers]   [1m[36mUserDetail Load (0.7ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (2.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (3.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (3.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1269.47ms)
+Completed 200 OK in 1935ms (Views: 1275.1ms | ActiveRecord: 207.5ms | Allocations: 26607)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (293.97ms)
+Completed 200 OK in 1873ms (Views: 528.2ms | ActiveRecord: 869.1ms | Allocations: 26072)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 10:17:23 +0300
+Processing by AttendancesController#index as */*
+  Parameters: {"attendance"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (10.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+Started GET "/me" for 127.0.0.1 at 2022-10-20 10:17:23 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (1.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.44ms)
+Completed 200 OK in 30ms (Views: 23.6ms | ActiveRecord: 3.8ms | Allocations: 5318)
+
+
+[active_model_serializers]   [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (233.08ms)
+Completed 200 OK in 279ms (Views: 248.4ms | ActiveRecord: 11.9ms | Allocations: 13149)
+
+
+AttendancesChannel is transmitting the subscription confirmation
+AttendancesChannel is streaming from attendances
+AttendancesChannel is transmitting the subscription confirmation
+AttendancesChannel is streaming from attendances
+Finished "/cable/" [WebSocket] for ::1 at 2022-10-20 10:17:49 +0300
+AttendancesChannel stopped streaming from attendances
+Started GET "/me" for 127.0.0.1 at 2022-10-20 10:17:51 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (3.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (96.5ms)
+Completed 200 OK in 112ms (Views: 99.2ms | ActiveRecord: 4.6ms | Allocations: 5325)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-20 10:17:51 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (3.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (54.73ms)
+Completed 200 OK in 84ms (Views: 52.9ms | ActiveRecord: 5.1ms | Allocations: 5318)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 10:17:57 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (1.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (2.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.04ms)
+Completed 200 OK in 80ms (Views: 70.8ms | ActiveRecord: 4.2ms | Allocations: 7047)
+
+
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 10:18:17 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (1.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (1.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.1ms)
+Completed 200 OK in 53ms (Views: 43.4ms | ActiveRecord: 3.7ms | Allocations: 6976)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 10:18:25 +0300
+  
+NoMethodError (undefined method `-@' for :payment_request_form:Symbol):
+  
+app/controllers/pvs_controller.rb:10:in `<class:PvsController>'
+app/controllers/pvs_controller.rb:1:in `<main>'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 10:18:53 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (1.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:41:in `payment_request_form'
+  [1m[36mUserDetail Load (1.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 436ms (Views: 1.9ms | ActiveRecord: 128.4ms | Allocations: 22037)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-20 10:34:13 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (1.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (2.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (8.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (639.02ms)
+Completed 200 OK in 1363ms (Views: 570.6ms | ActiveRecord: 108.8ms | Allocations: 33230)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-20 10:34:16 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.8ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (43.29ms)
+Completed 200 OK in 55ms (Views: 41.5ms | ActiveRecord: 4.1ms | Allocations: 5318)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 10:34:46 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:41:in `payment_request_form'
+  [1m[36mUserDetail Load (0.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.0ms)
+Completed 200 OK in 158ms (Views: 3.1ms | ActiveRecord: 23.2ms | Allocations: 21835)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 10:35:38 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:41:in `payment_request_form'
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:54:in `payment_request_form'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:61:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 108ms (Views: 1.0ms | ActiveRecord: 24.0ms | Allocations: 21912)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 10:42:30 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:46:in `payment_request_form'
+  [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:65:in `payment_request_form'
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:77:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.36ms)
+Completed 200 OK in 282ms (Views: 7.4ms | ActiveRecord: 28.6ms | Allocations: 24235)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mAttendance Load (2.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 10:56:42 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:46:in `payment_request_form'
+  [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:65:in `payment_request_form'
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:90:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:91:in `payment_request_form'
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:100:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 197ms (Views: 1.5ms | ActiveRecord: 29.2ms | Allocations: 29010)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 11:00:28 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (1.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:46:in `payment_request_form'
+  [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:65:in `payment_request_form'
+  [1m[36mAttendance Load (2.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:90:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:91:in `payment_request_form'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:100:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 301ms (Views: 6.2ms | ActiveRecord: 42.9ms | Allocations: 26648)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 11:00:55 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:46:in `payment_request_form'
+  [1m[36mUserDetail Load (5.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:65:in `payment_request_form'
+  [1m[36mAttendance Load (2.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:90:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:91:in `payment_request_form'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:100:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 185ms (Views: 1.1ms | ActiveRecord: 51.6ms | Allocations: 26606)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 11:03:33 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:46:in `payment_request_form'
+  [1m[36mUserDetail Load (0.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:65:in `payment_request_form'
+  [1m[36mAttendance Load (2.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:90:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:91:in `payment_request_form'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:100:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 291ms (Views: 0.9ms | ActiveRecord: 32.5ms | Allocations: 26651)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-20 11:04:55 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (12.2ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 57ms (Views: 11.4ms | ActiveRecord: 19.9ms | Allocations: 3530)
+
+
+  [1m[36mUserDetail Load (3.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Started GET "/pvs" for 127.0.0.1 at 2022-10-20 11:47:01 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => nil,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: Can't assign to nil
+...       :approved_by_name => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...      :approved_by_signature => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: Can't assign to nil
+...  :approved_by_signature => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...           :approved_by_date => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: Can't assign to nil
+...       :approved_by_date => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_name => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: Can't assign to nil
+...     :authorized_by_name => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_sign => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: Can't assign to nil
+...     :authorized_by_sign => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_date => nil
+...                             ^~
+):
+  
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/pvs" for 127.0.0.1 at 2022-10-20 11:49:14 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: syntax error, unexpected ',', expecting =>
+            :checked_by ,
+                        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name ,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:383: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+):
+  
+app/controllers/pvs_controller.rb:147: syntax error, unexpected ',', expecting =>
+app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:383: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:147: syntax error, unexpected ',', expecting =>
+app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:383: syntax error, unexpected '}', expecting `end'
+Started GET "/pvs" for 127.0.0.1 at 2022-10-20 11:52:01 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+            :checked_by = nil ,
+                        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: Can't assign to nil
+            :checked_by = nil ,
+                          ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :checked_by_date = nil ,
+                             ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: Can't assign to nil
+...         :checked_by_date = nil ,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:151: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+... :approved_by_budegt_holder_1 = nil ,
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:151: Can't assign to nil
+...proved_by_budegt_holder_1 = nil ,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+...roved_by_budegt_holder_1_date = nil ,
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: Can't assign to nil
+...d_by_budegt_holder_1_date = nil ,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:155: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+... :approved_by_budegt_holder_2 = nil ,
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:155: Can't assign to nil
+...proved_by_budegt_holder_2 = nil ,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:156: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+...roved_by_budegt_holder_2_date = nil
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name = nil,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: Can't assign to nil
+...        :approved_by_name = nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+...       :approved_by_signature = nil,
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: Can't assign to nil
+...   :approved_by_signature = nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :approved_by_date = nil,
+                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: Can't assign to nil
+...        :approved_by_date = nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+...          :authorized_by_name = nil,
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: Can't assign to nil
+...      :authorized_by_name = nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+...          :authorized_by_sign = nil,
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: Can't assign to nil
+...      :authorized_by_sign = nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:378: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+...          :authorized_by_date = nil
+...                              ^
+):
+  
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:147: Can't assign to nil
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:148: Can't assign to nil
+app/controllers/pvs_controller.rb:151: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: Can't assign to nil
+app/controllers/pvs_controller.rb:152: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:152: Can't assign to nil
+app/controllers/pvs_controller.rb:155: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:155: Can't assign to nil
+app/controllers/pvs_controller.rb:156: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:147: Can't assign to nil
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:148: Can't assign to nil
+app/controllers/pvs_controller.rb:151: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: Can't assign to nil
+app/controllers/pvs_controller.rb:152: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:152: Can't assign to nil
+app/controllers/pvs_controller.rb:155: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:155: Can't assign to nil
+app/controllers/pvs_controller.rb:156: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+Started GET "/pvs" for 127.0.0.1 at 2022-10-20 11:59:22 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => approved_...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...      :approved_by_signature => approved_by_signature,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...           :approved_by_date => approved_by_date,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_name => authorized_by_name,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_sign => authorized_by_sign,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_date => authorized_by_date
+...                             ^~
+):
+  
+app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/pvs" for 127.0.0.1 at 2022-10-20 11:59:52 +0300
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => approved_...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...      :approved_by_signature => approved_by_signature,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...           :approved_by_date => approved_by_date,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_name => authorized_by_name,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_sign => authorized_by_sign,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_date => authorized_by_date
+...                             ^~
+):
+  
+app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:00:21 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => approved_...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...      :approved_by_signature => approved_by_signature,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...           :approved_by_date => approved_by_date,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_name => authorized_by_name,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_sign => authorized_by_sign,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_date => authorized_by_date
+...                             ^~
+):
+  
+app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:388: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:389: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:390: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:394: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:395: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:396: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:00:57 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => nil,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: Can't assign to nil
+...       :approved_by_name => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...      :approved_by_signature => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: Can't assign to nil
+...  :approved_by_signature => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...           :approved_by_date => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: Can't assign to nil
+...       :approved_by_date => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_name => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: Can't assign to nil
+...     :authorized_by_name => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_sign => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: Can't assign to nil
+...     :authorized_by_sign => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_date => nil
+...                             ^~
+):
+  
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:01:45 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => nil,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: Can't assign to nil
+...       :approved_by_name => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...      :approved_by_signature => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: Can't assign to nil
+...  :approved_by_signature => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...           :approved_by_date => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: Can't assign to nil
+...       :approved_by_date => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_name => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: Can't assign to nil
+...     :authorized_by_name => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_sign => nil,
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: Can't assign to nil
+...     :authorized_by_sign => nil,
+...                            ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...         :authorized_by_date => nil
+...                             ^~
+):
+  
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: Can't assign to nil
+app/controllers/pvs_controller.rb:371: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:371: Can't assign to nil
+app/controllers/pvs_controller.rb:372: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:372: Can't assign to nil
+app/controllers/pvs_controller.rb:376: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:376: Can't assign to nil
+app/controllers/pvs_controller.rb:377: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:377: Can't assign to nil
+app/controllers/pvs_controller.rb:378: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:02:16 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:02:48 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:03:03 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 12:03:21 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (3.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.16ms)
+Completed 200 OK in 217ms (Views: 80.6ms | ActiveRecord: 55.8ms | Allocations: 37862)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:03:26 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/pvs_controller.rb:452: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:04:14 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (5.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (0.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 200 OK in 183ms (Views: 23.1ms | ActiveRecord: 40.1ms | Allocations: 26969)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:04:38 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: syntax error, unexpected symbol literal, expecting '}'
+            :checked_by => nil,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: Can't assign to nil
+            :checked_by => nil,
+                           ^~~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+            :checked_by_date => nil
+                             ^~
+):
+  
+app/controllers/pvs_controller.rb:147: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:147: Can't assign to nil
+app/controllers/pvs_controller.rb:148: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:147: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:147: Can't assign to nil
+app/controllers/pvs_controller.rb:148: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:05:30 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+            :checked_by => checked_by,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:149: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+            :checked_by_date => checked_by_date
+                             ^~
+):
+  
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:05:49 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+            :checked_by = checked_by,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :checked_by_date = checked_by_date
+                             ^
+):
+  
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+Started GET "/attendances" for 127.0.0.1 at 2022-10-20 12:42:49 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (0.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (77.61ms)
+Completed 200 OK in 535ms (Views: 118.2ms | ActiveRecord: 105.5ms | Allocations: 32282)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:54:59 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (2.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.52ms)
+Completed 200 OK in 323ms (Views: 3.1ms | ActiveRecord: 50.3ms | Allocations: 29099)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-20 12:56:07 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 49ms (Views: 2.5ms | ActiveRecord: 10.6ms | Allocations: 10194)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:14:04 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+            :checked_by = checked_by,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :checked_by_date = checked_by_date
+                             ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: syntax error, unexpected =>, expecting `end'
+...:approved_by_budegt_holder_1 => "Not Approved",
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+...egt_holder_1 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:153: syntax error, unexpected ',', expecting `end'
+...older_1_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:156: syntax error, unexpected ',', expecting `end'
+...egt_holder_2 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:159: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => "Not Appr...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+...oved_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+...by_signature => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:373: syntax error, unexpected ',', expecting `end'
+...oved_by_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+...ized_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:378: syntax error, unexpected ',', expecting `end'
+...ized_by_sign => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:385: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+):
+  
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:152: syntax error, unexpected =>, expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:153: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:156: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:159: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:373: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:378: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:385: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:152: syntax error, unexpected =>, expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:153: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:156: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:159: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:373: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:378: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:385: syntax error, unexpected '}', expecting `end'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:14:44 +0300
+  [1m[35m (10.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+            :checked_by = checked_by,
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :checked_by_date = checked_by_date
+                             ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: syntax error, unexpected =>, expecting `end'
+...:approved_by_budegt_holder_1 => "Not Approved",
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+...egt_holder_1 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:153: syntax error, unexpected ',', expecting `end'
+...older_1_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:156: syntax error, unexpected ',', expecting `end'
+...egt_holder_2 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:159: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => "Not Appr...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+...oved_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+...by_signature => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:373: syntax error, unexpected ',', expecting `end'
+...oved_by_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+...ized_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:378: syntax error, unexpected ',', expecting `end'
+...ized_by_sign => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:385: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+):
+  
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:152: syntax error, unexpected =>, expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:153: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:156: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:159: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:373: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:378: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:385: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:148: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:149: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:152: syntax error, unexpected =>, expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:153: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:156: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:159: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:373: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:378: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:385: syntax error, unexpected '}', expecting `end'
+Started GET "/attendances" for 127.0.0.1 at 2022-10-21 03:15:38 +0300
+Processing by AttendancesController#index as */*
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mAttendance Load (1.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserDetail Load (2.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/attendances_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (107.38ms)
+Completed 200 OK in 322ms (Views: 173.7ms | ActiveRecord: 70.9ms | Allocations: 37865)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:15:43 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+            :checked_by = checked_by,
+                        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :checked_by_date = checked_by_date,
+                             ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:151: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...:approved_by_budegt_holder_1 => "Not Approved",
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:151: syntax error, unexpected ',', expecting `end'
+...egt_holder_1 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+...older_1_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:155: syntax error, unexpected ',', expecting `end'
+...egt_holder_2 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+):
+  
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:155: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:155: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:16:49 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+            :checked_by = checked_by,
+                        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :checked_by_date = checked_by_date,
+                             ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:151: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...:approved_by_budegt_holder_1 => "Not Approved",
+...                             ^~
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:151: syntax error, unexpected ',', expecting `end'
+...egt_holder_1 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+...older_1_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:155: syntax error, unexpected ',', expecting `end'
+...egt_holder_2 => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+):
+  
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:155: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:151: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:152: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:155: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:158: syntax error, unexpected '}', expecting `end'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:17:10 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+            :checked_by = checked_by,
+                        ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+            :checked_by_date = checked_by_date,
+                             ^
+):
+  
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+app/controllers/pvs_controller.rb:147: syntax error, unexpected '=', expecting =>
+app/controllers/pvs_controller.rb:148: syntax error, unexpected '=', expecting '.' or &. or :: or '['
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:17:33 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (4.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (0.6ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 59.9ms | Allocations: 28362)
+
+
+  
+NameError (undefined local variable or method `checked_by' for #<PvsController:0x0000000000c0f8>):
+  
+app/controllers/pvs_controller.rb:147:in `payment_request_form'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:18:15 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (130.06ms)
+Completed 200 OK in 341ms (Views: 139.8ms | ActiveRecord: 17.1ms | Allocations: 26825)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:18:19 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (4.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (1.0ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (1.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 32ms (Views: 1.0ms | ActiveRecord: 10.3ms | Allocations: 3689)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:18:42 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (1.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (1.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 200 OK in 471ms (Views: 2.7ms | ActiveRecord: 33.9ms | Allocations: 26631)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:19:10 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => "Not Appr...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+...oved_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+...by_signature => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+...oved_by_date => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:376: syntax error, unexpected ',', expecting `end'
+...ized_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+...ized_by_sign => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:384: syntax error, unexpected '}', expecting `end'
+        }
+        ^
+):
+  
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:376: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:384: syntax error, unexpected '}', expecting `end'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:376: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:377: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:384: syntax error, unexpected '}', expecting `end'
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:19:49 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => "Not Appr...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+...oved_by_name => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+...by_signature => "Not Approved",
+...                              ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+...oved_by_date => "Not Approved",
+...                              ^
+):
+  
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:371: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:372: syntax error, unexpected ',', expecting `end'
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:20:14 +0300
+  
+SyntaxError (/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+            :approved_by_name => "Not Appr...
+            ^
+/Users/margaretwhite/Desktop/Projects/ZanaAfrica/Zanbase-Backend/app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+...oved_by_name => "Not Approved",
+...                              ^
+):
+  
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected symbol literal, expecting '}'
+app/controllers/pvs_controller.rb:370: syntax error, unexpected ',', expecting `end'
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:26:39 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (0.3ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.33ms)
+Completed 200 OK in 480ms (Views: 3.5ms | ActiveRecord: 61.8ms | Allocations: 26689)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:26:44 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (14.8ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 53ms (Views: 12.8ms | ActiveRecord: 21.2ms | Allocations: 2600)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:27:24 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (1.1ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (123.2ms)
+Completed 200 OK in 256ms (Views: 156.8ms | ActiveRecord: 4.9ms | Allocations: 1331)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:27:25 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (2.4ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 16ms (Views: 7.6ms | ActiveRecord: 3.8ms | Allocations: 1331)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:27:26 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (2.5ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 22ms (Views: 6.7ms | ActiveRecord: 3.6ms | Allocations: 1351)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:27:27 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (0.5ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 19ms (Views: 10.7ms | ActiveRecord: 1.0ms | Allocations: 1331)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:27:28 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (0.8ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 21ms (Views: 7.7ms | ActiveRecord: 2.7ms | Allocations: 1331)
+
+
+Started GET "/pvs" for 127.0.0.1 at 2022-10-21 03:27:29 +0300
+Processing by PvsController#index as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mPv Load (2.0ms)[0m  [1m[34mSELECT "pvs".* FROM "pvs" WHERE "pvs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:22:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 17ms (Views: 4.1ms | ActiveRecord: 4.0ms | Allocations: 1331)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-10-21 03:27:38 +0300
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 204 No Content in 35ms (ActiveRecord: 0.5ms | Allocations: 699)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-10-21 03:27:58 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"geofrey@zanaafrica.org", "password"=>"[FILTERED]", "session"=>{"email"=>"geofrey@zanaafrica.org", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "geofrey@zanaafrica.org"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.31ms)
+Completed 200 OK in 398ms (Views: 6.1ms | ActiveRecord: 3.1ms | Allocations: 892)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-21 03:27:59 +0300
+Started GET "/targets" for 127.0.0.1 at 2022-10-21 03:27:59 +0300
+Processing by TargetsController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (50.8ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 73ms (Views: 4.5ms | ActiveRecord: 51.6ms | Allocations: 2462)
+
+
+Started GET "/targets" for 127.0.0.1 at 2022-10-21 03:27:59 +0300
+Processing by TargetsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mTarget Load (0.5ms)[0m  [1m[34mSELECT "targets".* FROM "targets"[0m
+  ↳ app/controllers/targets_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 15ms (Views: 5.5ms | ActiveRecord: 0.9ms | Allocations: 1270)
+
+
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 32ms (ActiveRecord: 63.7ms | Allocations: 828)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/tutorials" for 127.0.0.1 at 2022-10-21 03:27:59 +0300
+Processing by TutorialsController#index as */*
+  Parameters: {"tutorial"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+Completed 404 Not Found in 19ms (ActiveRecord: 0.4ms | Allocations: 722)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/tutorials_controller.rb:4:in `index'
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:28:09 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (2.4ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (2.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (2.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (4.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (830.09ms)
+Completed 200 OK in 1207ms (Views: 839.7ms | ActiveRecord: 23.5ms | Allocations: 8113)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-10-21 03:28:10 +0300
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+[active_model_serializers]   [1m[36mUserDetail Load (0.5ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mAttendance Load (1.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mTask Load (29.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (522.94ms)
+Completed 200 OK in 663ms (Views: 495.5ms | ActiveRecord: 32.2ms | Allocations: 5319)
+
+
+Started GET "/payment_request" for 127.0.0.1 at 2022-10-21 03:28:30 +0300
+Processing by PvsController#payment_request_form as */*
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `authorize'
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:62:in `payment_request_form'
+  [1m[36mUserDetail Load (1.1ms)[0m  [1m[34mSELECT "user_details".* FROM "user_details" WHERE "user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:81:in `payment_request_form'
+  [1m[36mAttendance Load (1.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:106:in `payment_request_form'
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1 ORDER BY "attendances"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pvs_controller.rb:107:in `payment_request_form'
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pvs_controller.rb:116:in `payment_request_form'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (36.79ms)
+Completed 200 OK in 375ms (Views: 41.1ms | ActiveRecord: 9.8ms | Allocations: 3716)
+
+
