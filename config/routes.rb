@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :payment_approval_forms
-  resources :payment_request_forms
+  # resources :payment_approval_forms
+  # resources :payment_request_forms
   resources :pvs
   resources :tasks
   resources :departments, only: [:create,:update]
@@ -27,11 +27,13 @@ Rails.application.routes.draw do
   # get "generate_attendance", to: "attendances/generate"
 
 
+
+
   # Generating payment Request
-  get "payment_request", to: "pvs#payment_request_form"
+  get "payment_request_forms", to: "payment_request_forms#create"
 
   # Generating Payment approval Form 
-  get "/payment_approval", to: "pvs#payment_approval_form"
+  get "/payment_approval_forms", to: "payment_approval_forms#create"
 
 end
    

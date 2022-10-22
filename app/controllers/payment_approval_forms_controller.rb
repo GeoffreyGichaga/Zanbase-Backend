@@ -1,7 +1,9 @@
 class PaymentApprovalFormsController < ApplicationController
 
     def create
-        
+        new_payment_approval_form = PaymentApprovalForm.create!(payment_approval_form)
+        render json: new_payment_approval_form, status: :created
+
     end 
 
 
@@ -14,11 +16,11 @@ class PaymentApprovalFormsController < ApplicationController
 
 
     private 
-    
+
     def payment_approval_form
         # 1. Date - Date of generating pv 
         current_date = Time.new
-        date = "#{current_date.day}/#{current_date.month}/#{current_date.year}"
+        # pv_date = "#{current_date.day}/#{current_date.month}/#{current_date.year} "
 
 
 
@@ -92,10 +94,12 @@ class PaymentApprovalFormsController < ApplicationController
             # Signature
             user_signature = "#{@current_user.firstname[0]}.#{@current_user.lastname[0]}"
             # Date (Date of submitting the PV)
-            prepared_by_date = date
+            prepared_on_date = "#{current_date.day}/#{current_date.month}/#{current_date.year}"
 
 
-        
+            # Daily Stipend
+            # daily_stipend = "500"
+
 
 
         # To be sent as NUll 
@@ -107,7 +111,7 @@ class PaymentApprovalFormsController < ApplicationController
 
         approval_form_info = {
             # Top General Info 
-            :date => date,
+            # :date => date
             :org => user_organisation,
             :program => program,
             :function => function,
@@ -116,6 +120,7 @@ class PaymentApprovalFormsController < ApplicationController
             :name => name,
             :employee_id => employee_id,
             :start_day_of_the_week => start_day_of_the_week,
+            # :daily_stipend => daily_stipend,
             :end_date_of_the_week => end_date_of_the_week,
             :number_of_days_worked => number_of_days_worked,
             :amount_payable => amount_payable,
@@ -130,9 +135,9 @@ class PaymentApprovalFormsController < ApplicationController
             :telephone => telephone,
 
             # Approval section 
-            :prepared_by_name => prepared_by,
+            # :prepared_by => name,
             :user_signature_sign => user_signature,
-            :prepared_by_date => prepared_by_date,
+            # :prepared_on_date => submission_date,
 
             # Supervisor
             :approved_by_name => "Not Approved",
@@ -148,12 +153,10 @@ class PaymentApprovalFormsController < ApplicationController
 
 
 
-
         }
     
 
         
-        render json: approval_form_info, status: :created
-
+        return approval_form_info
     end
 end

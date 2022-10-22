@@ -1,6 +1,9 @@
 class PaymentRequestFormsController < ApplicationController
 
     def create
+        new_payment_request_form = PaymentRequestForm.create!(payment_request_form)
+        render json: new_payment_request_form, status: :created
+        
     end
 
 
@@ -66,7 +69,7 @@ class PaymentRequestFormsController < ApplicationController
 
             # The Working Period 
             start_date = @current_user.attendance.first.date
-            end_date = @current_user.attendance.first.date
+            end_date = @current_user.attendance.last.date
 
 
             #Complete description  
@@ -92,6 +95,7 @@ class PaymentRequestFormsController < ApplicationController
 
         payment_request_info = {
             # User's Information on the Payment Request form 
+            :user_id => @current_user.id,
             :generated_by => generated_by,
             :budget_holder => budget_holder,
             :payee => payee,
@@ -110,16 +114,18 @@ class PaymentRequestFormsController < ApplicationController
             :checked_by_date => "Not Checked",
 
             # Approved by 1 & It's date 
-            :approved_by_budegt_holder_1 => "Not Approved",
-            :approved_by_budegt_holder_1_date => "Not Approved",
+            :approved_by_budget_holder_1 => "Not Approved",
+            :approved_by_budget_holder_1_date => "Not Approved",
 
             # Approved by 1 & It's date
-            :approved_by_budegt_holder_2 => "Not Approved",
-            :approved_by_budegt_holder_2_date => "Not Approved"
+            :approved_by_budget_holder_2 => "Not Approved",
+            :approved_by_budget_holder_2_date => "Not Approved"
 
         }
 
-        render json: payment_request_info, status: :ok
+        return payment_request_info
+
+
 
     end 
 end
