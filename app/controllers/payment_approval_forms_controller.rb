@@ -20,7 +20,7 @@ class PaymentApprovalFormsController < ApplicationController
     def payment_approval_form
         # 1. Date - Date of generating pv 
         current_date = Time.new
-        # pv_date = "#{current_date.day}/#{current_date.month}/#{current_date.year} "
+        pv_date = "#{current_date.day}/#{current_date.month}/#{current_date.year} "
 
 
 
@@ -98,7 +98,7 @@ class PaymentApprovalFormsController < ApplicationController
 
 
             # Daily Stipend
-            # daily_stipend = "500"
+            daily_stipend = 500
 
 
 
@@ -111,7 +111,6 @@ class PaymentApprovalFormsController < ApplicationController
 
         approval_form_info = {
             # Top General Info 
-            # :date => date
             :org => user_organisation,
             :program => program,
             :function => function,
@@ -120,7 +119,7 @@ class PaymentApprovalFormsController < ApplicationController
             :name => name,
             :employee_id => employee_id,
             :start_day_of_the_week => start_day_of_the_week,
-            # :daily_stipend => daily_stipend,
+            :daily_stipend => daily_stipend,
             :end_date_of_the_week => end_date_of_the_week,
             :number_of_days_worked => number_of_days_worked,
             :amount_payable => amount_payable,
@@ -135,9 +134,9 @@ class PaymentApprovalFormsController < ApplicationController
             :telephone => telephone,
 
             # Approval section 
-            # :prepared_by => name,
+            :prepared_by_name => prepared_by,
             :user_signature_sign => user_signature,
-            # :prepared_on_date => submission_date,
+            :prepared_by_date => pv_date,
 
             # Supervisor
             :approved_by_name => "Not Approved",
@@ -149,9 +148,6 @@ class PaymentApprovalFormsController < ApplicationController
             :authorized_by_name => "Not Approved",
             :authorized_by_sign => "Not Approved",
             :authorized_by_date => "Not Approved"
-
-
-
 
         }
     
